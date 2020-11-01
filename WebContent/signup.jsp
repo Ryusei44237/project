@@ -1,0 +1,139 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="../css/sign-up.css">
+<title>Registration</title>
+</head>
+<header>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+		<a class="nav-link disabled" href="../html/toppage.html">
+			<div class="aaa">
+				<img src="../image/空.jpg" width="30" height="30"
+					class="d-inline-block align-top" alt=""> 卒研ページ
+			</div>
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active"><a class="nav-link"
+					href="../html/login.html">ログイン<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item active"><a class="nav-link disabled"
+					href="test.html">登録</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+<body>
+	<form action="/sotuken-project/SignInServlet" method="get">
+		<h2>新規アカウント登録</h2>
+		<p>無料でご利用いただけます。</p>
+		<div class="form-group col-md-12">
+			<label for="exampleInputId">アカウントID</label> <input type="text"
+				class="form-control" name="AcountId" placeholder="アカウントIDの入力...">
+		</div>
+		<div class="form-group col-md-12">
+			<label for="exampleInputName">アカウント名</label> <input type="text"
+				class="form-control" name="AcountName"
+				placeholder="アカウント名の入力...">
+		</div>
+		<div class="form-group col-md-12">
+			<label for="exampleInputEmail1">メールアドレス</label> <input type="email"
+				class="form-control" name="AcountEmail"
+				aria-describedby="emailHelp" placeholder="メールアドレスの入力...">
+		</div>
+		<p>生年月日</p>
+		<div class="form-row" style="margin-left: 28px;">
+			<div class="form-group col-md-3">
+				<label for="exampleInputYear">年</label> <input type="text"
+					class="form-control" name="AcountYear" placeholder="入力...">
+			</div>
+
+			<div class="form-group col-md-4">
+				<label for="exampleInputMonth">月</label> <select id="inputState"
+					class="form-control" name="AcountMonth">
+					<option selected>選択...</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+				</select>
+			</div>
+
+			<div class="form-group col-md-4">
+				<label for="exampleInputDay">日</label> <select id="inputState"
+					class="form-control" name="AcountDay">
+					<option selected>選択...</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+					<option>21</option>
+					<option>22</option>
+					<option>23</option>
+					<option>24</option>
+					<option>25</option>
+					<option>26</option>
+					<option>27</option>
+					<option>28</option>
+					<option>29</option>
+					<option>30</option>
+					<option>31</option>
+				</select>
+			</div>
+
+		</div>
+		<div class="form-group col-md-12">
+			<label for="exampleInputPassword1">パスワード</label> <input
+				type="password" class="form-control" id="exampleInputPassword1"
+				placeholder="パスワードの入力..."> <input type="password"
+				class="form-control" name="password"
+				placeholder="パスワードの再入力...">
+		</div>
+		<div class="form-group col-md-12">
+			<label for="exampleInputTel">電話番号</label> <input type="tel"
+				class="form-control" name="AcountTell" placeholder="電話番号の入力...">
+		</div>
+		<div class="form-group">
+			<input type="submit" class="btn btn-primary"
+				style="margin-bottom: 5px;" value="アカウント登録">
+		</div>
+	</form>
+</body>
+</html>
