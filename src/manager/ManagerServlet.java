@@ -1,4 +1,4 @@
-package servlet;
+package manager;
 
 import java.io.IOException;
 
@@ -9,20 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Bean.account;
-import dao.AccountDao;
-
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class ManagerServlet
  */
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/ManagerServlet")
+public class ManagerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginServlet() {
+    public ManagerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,17 +28,26 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String id= request.getParameter("id");
-		String password= request.getParameter("password");
+		//挿入したい値をjsp空引っ張ってきた
+		String id = request.getParameter("id");
+		String name=request.getParameter("name");
+		String mail=request.getParameter("mail");
+		String password=request.getParameter("password");
+		String birthday=request.getParameter("birthday");
+		String tell=request.getParameter("tell");
+		String token=request.getParameter("token");
+		String create_at=request.getParameter("create_at");
+		String update_at=request.getParameter("update_at");
+		System.out.println(id+"|"+name+"|"+mail+"|"+password+"|"+birthday+"|"+tell+"|"+token+"|"+create_at+"|"+update_at);
+		//Daoから値を引っ張ってきた
+		manager s = new manager(id,name,mail,password,birthday,tell,token,create_at,update_at);
+		manager result = ManagerDao.InsertPost(s);
 
-		System.out.println(id+"|"+password);
-		//データベースから値を取得
-		account result = AccountDao.searchDao(id,password);
 
 		//取得した値をリクエストスコープへ保存
-		request.setAttribute("account", result);
-		String view = "/WEB-INF/view/mypage.jsp";
+		request.setAttribute("Manager", result);
+
+		String view = "/WEB-INF/view/manager.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 		dispatcher.forward(request, response);
 	}

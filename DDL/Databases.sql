@@ -2,7 +2,7 @@ CREATE DATABASE application;
 
 CREATE TABLE account(
 
-    id int(255),                /**アカウントID**/
+    id VARCHAR(255),                /**アカウントID**/
     name VARCHAR(256),          /**アカウント名**/
     mail VARCHAR(256),          /**メールアドレス**/
     password VARCHAR(256),      /**パスワード**/
@@ -11,7 +11,7 @@ CREATE TABLE account(
     token VARCHAR(256),         /**ログイン情報保持**/
     create_at date,             /**作成日時**/
     update_at date,             /**更新日時**/
-    PRIMARY KEY(id)             
+    PRIMARY KEY(id)
 
 );
 
@@ -37,7 +37,7 @@ CREATE TABLE tags(
     PRIMARY KEY(id)
 
 );
- 
+
 
 CREATE TABLE post_tags(
 

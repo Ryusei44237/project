@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="Bean.account" %>
 <!-- マイページ　html -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -13,7 +14,7 @@
   <!-- font awesome CSS -->
   <script src="https://kit.fontawesome.com/86a6bb02b6.js" crossorigin="anonymous"></script>
   <!-- end -->
-  <title>my page</title>
+  <title><%account.get %>>my page</title>
 
   <!-- 投稿ボタンを押下した際に出てくる投稿モーダル -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

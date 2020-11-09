@@ -34,10 +34,10 @@
  <div class="form-wrapper">
     <h1>ログイン</h1>
 <!--ここのフォームから、MainServletへ値を送信する-->
-	<form action="/sotuken-project/MainServlet" method="get">
+	<form action="/sotuken-project/LoginServlet" method="get">
       <div class="form-item">
         <label for="email"></label>
-        <input type="email" name="email" required="required" placeholder="Account ID"></input>
+        <input type="text" name="id" required="required" placeholder="Account ID"></input>
       </div>
       <div class="form-item">
         <label for="password"></label>
