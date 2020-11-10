@@ -42,16 +42,16 @@
 		<p>無料でご利用いただけます。</p>
 		<div class="form-group col-md-12">
 			<label for="exampleInputId">アカウントID</label> <input type="text"
-				class="form-control" name="AcountId" placeholder="アカウントIDの入力...">
+				class="form-control" name="id" placeholder="作成したいアカウントIDを入力...">
 		</div>
 		<div class="form-group col-md-12">
 			<label for="exampleInputName">アカウント名</label> <input type="text"
-				class="form-control" name="AcountName"
+				class="form-control" name="name"
 				placeholder="アカウント名の入力...">
 		</div>
 		<div class="form-group col-md-12">
 			<label for="exampleInputEmail1">メールアドレス</label> <input type="email"
-				class="form-control" name="AcountEmail"
+				class="form-control" name="mail"
 				aria-describedby="emailHelp" placeholder="メールアドレスの入力...">
 		</div>
 		<p>生年月日</p>
@@ -65,15 +65,15 @@
 				<label for="exampleInputMonth">月</label> <select id="inputState"
 					class="form-control" name="AcountMonth">
 					<option selected>選択...</option>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					<option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					<option>09</option>
 					<option>10</option>
 					<option>11</option>
 					<option>12</option>
@@ -84,15 +84,15 @@
 				<label for="exampleInputDay">日</label> <select id="inputState"
 					class="form-control" name="AcountDay">
 					<option selected>選択...</option>
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-					<option>6</option>
-					<option>7</option>
-					<option>8</option>
-					<option>9</option>
+					<option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					<option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					<option>09</option>
 					<option>10</option>
 					<option>11</option>
 					<option>12</option>
@@ -130,6 +130,9 @@
 			<label for="exampleInputTel">電話番号</label> <input type="tel"
 				class="form-control" name="AcountTell" placeholder="電話番号の入力...">
 		</div>
+		<input type="hidden" name="token" value="sessions">
+		<input type="hidden" name="create_at" value="20200101">
+		<input type="hidden" name="update_at" value="20200101">
 		<div class="form-group">
 			<input type="submit" class="btn btn-primary"
 				style="margin-bottom: 5px;" value="アカウント登録">

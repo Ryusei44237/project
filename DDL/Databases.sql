@@ -12,9 +12,10 @@ CREATE TABLE account(
     tell VARCHAR(256),          /**電話番号**/
     token VARCHAR(256),         /**ログイン情報保持**/
     create_at date,             /**作成日時**/
-    update_at date, 
+    update_at date,             /**更新日時**/
     UNIQUE(id),
     PRIMARY KEY(id)             
+
 
 );
 
@@ -41,7 +42,7 @@ CREATE TABLE tags(
     PRIMARY KEY(id)
 
 );
- 
+
 
 CREATE TABLE post_tags(
 
