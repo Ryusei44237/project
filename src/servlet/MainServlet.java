@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.account;
+import dao.AccountDao;
+
 /**
  * Servlet implementation class LoginServlet
  */
@@ -29,17 +32,26 @@ public class MainServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int count=0;
+
 		/*login.jspで入力された値をloginDaoを使用し一致しているか調べる*/
-		String email=request.getParameter("email");
+		String id=request.getParameter("id");
 		String pass=request.getParameter("password");
-		String testemail="test@mail";
-		String testpass="0000";
+		String testid=id;
+		String testpass=pass;
 		/*CLIでデータ内容確認用コード*/
-		System.out.println(email+"|"+testemail);
+		System.out.println(testid+"|"+testpass);
 		System.out.println(pass+"|"+testpass);
 		/*ここまで*/
+		//データベースから値を取得
+		account result = AccountDao.searchDao(id,pass);
+		String setName=AccountDao.getname;
+		System.out.println("取得した名前"+setName);
+		//取得した値をリクエストスコープへ保存
+		request.setAttribute("account", result);
+		request.setAttribute("setName", setName);
+
 		/*条件分岐(一致していた場合メイン画面へ遷移を許可する)*/
-		if (email.equals(testemail) && pass.equals(testpass)) {
+		if (id.equals(testid) && pass.equals(testpass)) {
 			System.out.println("main.jspへ遷移します");
 			/*ここにmain.jspへの遷移コードを書く｛main.jsp｝*/
 			String view = "/WEB-INF/view/main.jsp";

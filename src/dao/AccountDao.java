@@ -19,6 +19,7 @@ public class AccountDao {
 	private static final String user = "root";
 	//パスワード
 	private static final String pw = "44237";
+	public static String getname = null;
 
 
 	//INSERT文を実行するメソッドのサンプル
@@ -123,7 +124,7 @@ public class AccountDao {
 
 				String getid = rs.getString("id");
 				String getpass = rs.getString("password");
-				String getname = rs.getString("name");
+				getname = rs.getString("name");
 				result = new account(getid,getpass,getname);
 
 				if (id.equals(getid)&&password.equals(getpass)) {
