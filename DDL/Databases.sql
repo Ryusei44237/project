@@ -14,8 +14,7 @@ CREATE TABLE account(
     create_at date,             /**作成日時**/
     update_at date,             /**更新日時**/
     UNIQUE(id),
-    PRIMARY KEY(id)             
-
+    PRIMARY KEY(id)
 
 );
 
