@@ -27,7 +27,7 @@ public class account {
 		this.update_at = update_at;
 	}
 
-	public account(String id, String password) {
+	public account(String id, String password, String name) {
 		// TODO 自動生成されたコンストラクター・スタブ
 		this.id=id;
 		this.password=password;

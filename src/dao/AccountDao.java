@@ -123,10 +123,11 @@ public class AccountDao {
 
 				String getid = rs.getString("id");
 				String getpass = rs.getString("password");
-				result = new account(id,password);
+				String getname = rs.getString("name");
+				result = new account(getid,getpass,getname);
 
 				if (id.equals(getid)&&password.equals(getpass)) {
-					System.out.println(getid+"|"+getpass);
+					System.out.println(getid+"|"+getpass+"|"+getname);
 					return result;
 				}
 			} catch (ClassNotFoundException e) {
