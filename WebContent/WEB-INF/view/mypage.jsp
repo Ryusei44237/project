@@ -19,10 +19,10 @@
 	crossorigin="anonymous"></script>
 <!-- end -->
 
-<title><%=request.getAttribute("account.getName();") %>my page</title>
+<title><%=%>my page</title>
 
 <!-- 投稿ボタンを押下した際に出てくる投稿モーダル -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content" style="width: 750px;">
@@ -49,7 +49,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-				<input type="sabmit" class="btn btn-primary" value="投稿">
+				<input type="submit" class="btn btn-primary" value="投稿">
 			</div>
 		</div>
 	</div>
@@ -437,30 +437,30 @@
 				<!--ここにその他-->
 
 				<div class="acount-form">
-					<form>
+					<form action="/sotuken-project/UpdateServlet" method="get">
+						<%=%>
 						<div class="form-row">
 							<div class="col-md-4 mb-3">
 								<label for="validationServer01">苗字</label> <input type="text"
 									class="form-control is-valid" id="validationServer01"
-									placeholder="First name" value="Mark" required>
-								<div class="valid-feedback">Looks good!</div>
+									name="fristname" value=<%%> required>
+
 							</div>
 							<div class="col-md-4 mb-3">
 								<label for="validationServer02">名前</label> <input type="text"
 									class="form-control is-valid" id="validationServer02"
-									placeholder="Last name" value="Otto" required>
-								<div class="valid-feedback">Looks good!</div>
+									name="lastname" value=<%%> required>
+
 							</div>
 							<div class="col-md-4 mb-3">
-								<label for="validationServerUsername">ユーザー名</label>
+								<label for="validationServerUsername">ユーザーID</label>
 								<div class="input-group">
 									<div class="input-group-prepend">
 										<span class="input-group-text" id="inputGroupPrepend3">@</span>
 									</div>
 									<input type="text" class="form-control is-invalid"
-										id="validationServerUsername" placeholder="Username"
+										id="validationServerUsername" value=<%=%> name="userid"
 										aria-describedby="inputGroupPrepend3" required>
-									<div class="invalid-feedback">ユーザー名を入力してください。</div>
 								</div>
 							</div>
 						</div>
@@ -468,28 +468,28 @@
 							<div class="col-md-6 mb-3">
 								<label for="validationServer03">住所</label> <input type="text"
 									class="form-control is-invalid" id="validationServer03"
-									placeholder="City" required>
+									name="address" value=<%%> required>
 								<div class="invalid-feedback">住所を入力してください。</div>
 							</div>
 							<div class="col-md-3 mb-3">
 								<label for="validationServer04">メールアドレス</label> <input
 									type="text" class="form-control is-invalid"
-									id="validationServer04" placeholder="〇〇〇@example.com" required>
+									id="validationServer04" name="mail" required>
 								<div class="invalid-feedback">メールアドレスを入力してください。</div>
 							</div>
 							<div class="col-md-3 mb-3">
 								<label for="validationServer05">ユーザーID</label> <input
 									type="text" class="form-control is-invalid"
-									id="validationServer05" placeholder="ユーザーID" required>
-								<div class="invalid-feedback">ユーザーIDを入力してください。</div>
+									id="validationServer05" name="birthday" required>
+								<div class="invalid-feedback">誕生日の変更</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="form-check">
 								<input class="form-check-input is-invalid" type="checkbox"
 									value="" id="invalidCheck3" required> <label
-									class="form-check-label" for="invalidCheck3"> Agree to
-									terms and conditions </label>
+									class="form-check-label" for="invalidCheck3">
+									変更してよいですか？ </label>
 								<div class="invalid-feedback">規約に同意</div>
 							</div>
 						</div>

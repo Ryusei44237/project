@@ -90,7 +90,7 @@
 					<li class="nav-item active"><a class="nav-link "
 						href="signup.jsp">登録</a></li>
 					<li class="nav-item active"><a class="nav-link "
-						href="mypage.jsp">マイページ</a></li>
+						href="/WEB-INF/view/mypage.jsp">マイページ</a></li>
 				</ul>
 				<!--素材-->
 				<div class="searchform">

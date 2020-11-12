@@ -31,19 +31,24 @@ public class SignInServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//挿入したい値をjsp空引っ張ってきた
-				String id = request.getParameter("id");
-				String name=request.getParameter("name");
-				String mail=request.getParameter("mail");
-				String password=request.getParameter("password");
+				String id = request.getParameter("id");//アカウントID
+				String name=request.getParameter("name");//アカウントネーム
+				String mail=request.getParameter("mail");//メールアドレス
+				String password=request.getParameter("password");//パスワード・ハッシュかける処理を作成
+				//ハッシュ化
+
+				//ハッシュ化ここまで
 				//生年月日は個別で得たものを合体させbirthdayとして登録する
-				String year = request.getParameter("AcountYear");
-				String month = request.getParameter("AcountMonth");
-				String day = request.getParameter("AcountDay");
-				String birthday=year+month+day;
-				String tell=request.getParameter("tell");
-				String token=request.getParameter("token");
-				String create_at=request.getParameter("create_at");
-				String update_at=request.getParameter("update_at");
+				String year = request.getParameter("AcountYear");//年
+				String month = request.getParameter("AcountMonth");//月
+				String day = request.getParameter("AcountDay");//日
+				String birthday=year+month+day;//ここでdate型に入れれる形に直す
+				//ここまで
+				String tell=request.getParameter("tell");//電話番号
+				String token=request.getParameter("token");//セッショントークン
+				String create_at=request.getParameter("create_at");//作成日
+				String update_at=request.getParameter("update_at");//更新日
+				//取得した値をCLIに表示させる
 				System.out.println(id+"|"+name+"|"+mail+"|"+password+"|"+birthday+"|"+tell+"|"+token+"|"+create_at+"|"+update_at);
 				//Daoから値を引っ張ってきた
 				account s = new account(id,name,mail,password,birthday,tell,token,create_at,update_at);

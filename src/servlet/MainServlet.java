@@ -38,13 +38,17 @@ public class MainServlet extends HttpServlet {
 		String pass=request.getParameter("password");
 		String testid=id;
 		String testpass=pass;
+
 		/*CLIでデータ内容確認用コード*/
 		System.out.println(testid+"|"+testpass);
 		System.out.println(pass+"|"+testpass);
 		/*ここまで*/
+
 		//データベースから値を取得
 		account result = AccountDao.searchDao(id,pass);
+		//AcountDaoからgetNameという変数を引っ張ってきてメイン画面のタイトルにアカウント名を表示させる
 		String setName=AccountDao.getname;
+		//ここまで
 		System.out.println("取得した名前"+setName);
 		//取得した値をリクエストスコープへ保存
 		request.setAttribute("account", result);
@@ -58,6 +62,7 @@ public class MainServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
 			}
+
 		/*一致していなかった場合は再度入力させるためリダイレクトさせる*/
 		else {
 			count+=1;
