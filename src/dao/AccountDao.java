@@ -20,11 +20,18 @@ public class AccountDao {
 	//パスワード
 	private static final String pw = "44237";
 	public static String getname = null;
+	public static String getid=null;
+	public static String getmail=null;
+	public static String getpassword=null;
+	public static String getbirthday=null;
+	public static String gettell=null;
+	public static String getcreate_at=null;
+	public static String getupdate_at=null;
 
 
 	//INSERT文を実行するメソッドのサンプル
 	//引数は登録したい情報が格納されたBean
-	public static account InsertPost(account s){
+	public static account inserAccount(account s){
 		//②アクセスに必要な変数の初期化
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -122,7 +129,7 @@ public class AccountDao {
 				// ⑦実行結果を含んだインスタンスからデータを取り出す
 				rs.next();
 
-				String getid = rs.getString("id");
+				getid = rs.getString("id");
 				String getpass = rs.getString("password");
 				getname = rs.getString("name");
 				result = new account(getid,getpass,getname);
@@ -164,5 +171,73 @@ public class AccountDao {
 				}
 			}
 			return null;
+		}//引数のIDに一致するレコードをemployeeテーブルから1件取得する。
+		public static account searchDao2(String id){
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			account result = null;
+
+			try {
+				// ②JDBCドライバをロードする
+				Class.forName("com.mysql.cj.jdbc.Driver");
+
+				// ③DBMSとの接続を確立する
+				con = DriverManager.getConnection(url,user,pw);
+				// ④SQL文を作成する
+				String sql = "SELECT * FROM account WHERE id = ?;";
+				// ⑤SQL文を実行するための準備を行う
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, id);
+
+				// ⑥SQL文を実行してDBMSから結果を受信する
+				rs = pstmt.executeQuery();
+
+				// ⑦実行結果を含んだインスタンスからデータを取り出す
+				rs.next();
+
+				getid = rs.getString("id");
+				getname = rs.getString("name");
+				getmail = rs.getString("mail");
+				getpassword  = rs.getString("password");
+				getbirthday = rs.getString("birthday");
+				gettell = rs.getString("tell");
+				getcreate_at = rs.getString("create_at");
+				getupdate_at = rs.getString("update_at");
+				result = new account(getid,getname,getmail,getpassword,getbirthday,gettell,getcreate_at,getupdate_at);
+				System.out.println("DAOで取得した値の一覧："+getid+"|"+getname+"|"+getmail+"|"+getpassword+"|"+getbirthday+"|"+gettell+"|"+getcreate_at+"|"+getupdate_at);
+			} catch (ClassNotFoundException e) {
+				System.out.println("JDBCドライバが見つかりません。");
+				e.printStackTrace();
+			} catch (SQLException e) {
+				System.out.println("DBアクセス時にエラーが発生しました。");
+			} finally {
+				// ⑧DBMSから切断する
+				try {
+					if (rs != null) {
+						rs.close();
+					}
+				} catch (SQLException e) {
+					System.out.println("DBアクセス時にエラーが発生しました。");
+					e.printStackTrace();
+				}
+				try {
+					if (pstmt != null) {
+						pstmt.close();
+					}
+				} catch (SQLException e) {
+					System.out.println("DBアクセス時にエラーが発生しました。");
+					e.printStackTrace();
+				}
+				try {
+					if (con != null) {
+						con.close();
+					}
+				} catch (SQLException e) {
+					System.out.println("DBアクセス時にエラーが発生しました。");
+					e.printStackTrace();
+				}
+			}
+			return result;
 		}
 }

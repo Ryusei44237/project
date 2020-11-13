@@ -48,11 +48,13 @@ public class MainServlet extends HttpServlet {
 		account result = AccountDao.searchDao(id,pass);
 		//AcountDaoからgetNameという変数を引っ張ってきてメイン画面のタイトルにアカウント名を表示させる
 		String setName=AccountDao.getname;
+		String getid=AccountDao.getid;
 		//ここまで
 		System.out.println("取得した名前"+setName);
 		//取得した値をリクエストスコープへ保存
 		request.setAttribute("account", result);
 		request.setAttribute("setName", setName);
+		request.setAttribute("getid", getid);
 
 		/*条件分岐(一致していた場合メイン画面へ遷移を許可する)*/
 		if (id.equals(testid) && pass.equals(testpass)) {

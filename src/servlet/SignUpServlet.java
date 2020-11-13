@@ -15,13 +15,13 @@ import Bean.account;
  * Servlet implementation class SignInServlet
  */
 @WebServlet("/SignInServlet")
-public class SignInServlet extends HttpServlet {
+public class SignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SignInServlet() {
+    public SignUpServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -52,7 +52,7 @@ public class SignInServlet extends HttpServlet {
 				System.out.println(id+"|"+name+"|"+mail+"|"+password+"|"+birthday+"|"+tell+"|"+token+"|"+create_at+"|"+update_at);
 				//Daoから値を引っ張ってきた
 				account s = new account(id,name,mail,password,birthday,tell,token,create_at,update_at);
-				account result = dao.AccountDao.InsertPost(s);
+				account result = dao.AccountDao.inserAccount(s);
 		System.out.println("login.jspへ遷移します");
 		/*ここにlogin.jspへの遷移コードを書く｛login.jsp｝*/
 		String view = "/WEB-INF/view/login.jsp";

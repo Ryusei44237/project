@@ -33,6 +33,19 @@ public class account {
 		this.password=password;
 	}
 
+	public account(String id, String name, String mail, String password, String birthday, String tell,
+			String create_at, String update_at) {
+		// TODO 自動生成されたコンストラクター・スタブ
+		this.id=id;
+		this.name=name;
+		this.mail=mail;
+		this.password=password;
+		this.birthday=birthday;
+		this.tell=tell;
+		this.create_at=create_at;
+		this.update_at=update_at;
+	}
+
 	public String getId() {
 		return id;
 	}

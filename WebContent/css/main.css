@@ -1,0 +1,29 @@
+body{
+  z-index: 1;
+  margin-top: 50px;
+}
+header{
+  position: fixed;            /* ヘッダーの固定 */
+  top: 0px;                   /* 位置(上0px) */
+  left: 0px;                  /* 位置(右0px) */
+  width: 100%;                /* 横幅100%　*/
+  height: 140px;
+  z-index: 2;
+}
+.card-deck {
+  padding: 0 100px 0 100px;
+}
+.carousel-inner{
+  margin-top: 56px;
+  background-color: gray;
+  text-align: center;
+  z-index: 1;
+}.clear-decoration {
+    border: none;  /* 枠線を消す */
+    outline: none; /* クリックしたときに表示される枠線を消す */
+    background: transparent; /* 背景の灰色を消す */
+}
+.modal.fade{
+
+z-index:9998;
+}

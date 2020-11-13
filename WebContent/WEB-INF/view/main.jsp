@@ -6,7 +6,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Bootstrap CSS -->
@@ -84,14 +84,25 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="login.jsp">ログイン<span class="sr-only">(current)</span></a></li>
-					<li class="nav-item active"><a class="nav-link "
-						href="signup.jsp">登録</a></li>
-					<li class="nav-item active"><a class="nav-link "
-						href="/WEB-INF/view/mypage.jsp">マイページ</a></li>
-				</ul>
+				<!--ここでページ遷移を分岐させる-->
+					<ul class="navbar-nav mr-auto">
+						<li>
+							<form action="/sotuken-project/SignInServlet" method="get">
+								<button type="submit" class="clear-decoration">登録</button>
+							</form>
+					</li>
+						<li>
+							<form action="/sotuken-project/TestServlet" method="get">
+								<button type="submit" class="clear-decoration">ログイン</button>
+							</form>
+						</li>
+						<li>
+							<form action="/sotuken-project/UpdateServlet" method="get">
+								<button type="submit" class="clear-decoration" name="id" value=<%=request.getAttribute("getid") %>>マイページ</button>
+							</form>
+						</li>
+					</ul>
+
 				<!--素材-->
 				<div class="searchform">
 					<form class="form-inline my-2 my-lg-0"

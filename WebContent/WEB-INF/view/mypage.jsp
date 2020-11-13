@@ -1,6 +1,6 @@
+<%@page import="Bean.account"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="Bean.account"%>
 <!-- マイページ　html -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -19,7 +19,7 @@
 	crossorigin="anonymous"></script>
 <!-- end -->
 
-<title><%=%>my page</title>
+<title><%=request.getAttribute("getName")%>のページ</title>
 
 <!-- 投稿ボタンを押下した際に出てくる投稿モーダル -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -254,7 +254,7 @@
 										<p>ログアウトしますか？</p>
 										<a class="btn btn-primary" href="login.html" role="button">ログアウト</a>
 									</div>
-								</div>
+								</div><!--ここでログアウト-->
 							</div>
 						</div>
 					</div>
@@ -435,67 +435,87 @@
 			<div class="tab-pane fade" id="contact" role="tabpanel"
 				aria-labelledby="contact-tab">
 				<!--ここにその他-->
+<!-- アカウント情報変更タブ -->
+<form class="needs-validation" novalidate action="/sotuken-project/UpdateServlet" method="get">
+<div class="form-row">
+<div class="col-md-4 mb-3">
+<label for="validationCustom01">ユーザID</label>
+<input type="text" class="form-control" id="validationCustom01" value=<%=request.getAttribute("id")%> name="userid" required>
+<div class="valid-feedback">
 
-				<div class="acount-form">
-					<form action="/sotuken-project/UpdateServlet" method="get">
-						<%=%>
-						<div class="form-row">
-							<div class="col-md-4 mb-3">
-								<label for="validationServer01">苗字</label> <input type="text"
-									class="form-control is-valid" id="validationServer01"
-									name="fristname" value=<%%> required>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<label for="validationCustom02">名前</label>
+<input type="text" class="form-control" id="validationCustom02" value=<%=request.getAttribute("name")%> name="lastname" required>
+<div class="valid-feedback">
 
-							</div>
-							<div class="col-md-4 mb-3">
-								<label for="validationServer02">名前</label> <input type="text"
-									class="form-control is-valid" id="validationServer02"
-									name="lastname" value=<%%> required>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<label for="validationCustomUsername">メール</label>
+<div class="input-group">
+<input type="text" class="form-control" id="validationCustomUsername" value=<%=request.getAttribute("mail")%> aria-describedby="inputGroupPrepend"  name="userId" required>
+<div class="invalid-feedback">
+</div>
+</div>
+</div>
+</div>
+<div class="form-row">
+<div class="col-md-6 mb-3">
+<label for="validationCustom03">電話番号</label>
+<input type="text" class="form-control" id="validationCustom03" value=<%=request.getAttribute("tell")%> name="tell" required>
+<div class="invalid-feedback">
+</div>
+</div>
+<div class="col-md-3 mb-3">
+<label for="validationCustom04">現在のパスワード</label>
+<input type="password" class="form-control" id="validationCustom04" placeholder="パスワード" name="password" required>
+<div class="invalid-feedback">
+</div>
+</div>
+<div class="col-md-3 mb-3">
+<label for="validationCustom05">新しいパスワード</label>
+<input type="password" class="form-control" id="validationCustom05" placeholder="パスワードの再入力をお願いします" name="password2" required>
+<div class="invalid-feedback">
 
-							</div>
-							<div class="col-md-4 mb-3">
-								<label for="validationServerUsername">ユーザーID</label>
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<span class="input-group-text" id="inputGroupPrepend3">@</span>
-									</div>
-									<input type="text" class="form-control is-invalid"
-										id="validationServerUsername" value=<%=%> name="userid"
-										aria-describedby="inputGroupPrepend3" required>
-								</div>
-							</div>
-						</div>
-						<div class="form-row">
-							<div class="col-md-6 mb-3">
-								<label for="validationServer03">住所</label> <input type="text"
-									class="form-control is-invalid" id="validationServer03"
-									name="address" value=<%%> required>
-								<div class="invalid-feedback">住所を入力してください。</div>
-							</div>
-							<div class="col-md-3 mb-3">
-								<label for="validationServer04">メールアドレス</label> <input
-									type="text" class="form-control is-invalid"
-									id="validationServer04" name="mail" required>
-								<div class="invalid-feedback">メールアドレスを入力してください。</div>
-							</div>
-							<div class="col-md-3 mb-3">
-								<label for="validationServer05">ユーザーID</label> <input
-									type="text" class="form-control is-invalid"
-									id="validationServer05" name="birthday" required>
-								<div class="invalid-feedback">誕生日の変更</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<div class="form-check">
-								<input class="form-check-input is-invalid" type="checkbox"
-									value="" id="invalidCheck3" required> <label
-									class="form-check-label" for="invalidCheck3">
-									変更してよいですか？ </label>
-								<div class="invalid-feedback">規約に同意</div>
-							</div>
-						</div>
-						<button class="btn btn-primary" type="submit">変更</button>
-					</form>
-				</div>
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class="form-check">
+<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+<label class="form-check-label" for="invalidCheck">
+同意
+</label>
+<div class="invalid-feedback">
+同意が無いと変更できません
+</div>
+</div>
+</div>
+<button class="btn btn-primary" type="submit">アカウント情報変更</button>
+</form>
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+'use strict';
+window.addEventListener('load', function() {
+// Fetch all the forms we want to apply custom Bootstrap validation styles to
+var forms = document.getElementsByClassName('needs-validation');
+// Loop over them and prevent submission
+var validation = Array.prototype.filter.call(forms, function(form) {
+form.addEventListener('submit', function(event) {
+if (form.checkValidity() === false) {
+	event.preventDefault();
+	event.stopPropagation();
+}
+form.classList.add('was-validated');
+}, false);
+});
+}, false);
+})();
+</script>
 				<!-- ここまで -->
 			</div>
 		</div>
@@ -523,4 +543,3 @@
 <!-- body終了 -->
 
 </html>
-
