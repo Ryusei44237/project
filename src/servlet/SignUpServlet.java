@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,6 +32,9 @@ public class SignUpServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String time = sdf.format(timestamp);
 		//挿入したい値をjsp空引っ張ってきた
 				String id = request.getParameter("id");//アカウントID
 				String name=request.getParameter("name");//アカウントネーム
@@ -46,8 +51,8 @@ public class SignUpServlet extends HttpServlet {
 				//ここまで
 				String tell=request.getParameter("tell");//電話番号
 				String token=request.getParameter("token");//セッショントークン
-				String create_at=request.getParameter("create_at");//作成日
-				String update_at=request.getParameter("update_at");//更新日
+				String create_at=time;//作成日
+				String update_at=null;//更新日
 				//取得した値をCLIに表示させる
 				System.out.println(id+"|"+name+"|"+mail+"|"+password+"|"+birthday+"|"+tell+"|"+token+"|"+create_at+"|"+update_at);
 				//Daoから値を引っ張ってきた

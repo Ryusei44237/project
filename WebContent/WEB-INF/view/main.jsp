@@ -19,7 +19,7 @@
 <script src="https://kit.fontawesome.com/86a6bb02b6.js"
 	crossorigin="anonymous"></script>
 <!-- end -->
-<title><%=request.getAttribute("setName")%>さんのトップページ</title>
+<title><%=request.getAttribute("getname")%>さんのトップページ</title>
 
 <!-- 投稿ボタンを押下した際に出てくる投稿モーダル -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
