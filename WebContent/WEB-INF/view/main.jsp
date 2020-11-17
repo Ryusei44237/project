@@ -87,7 +87,7 @@
 				<!--ここでページ遷移を分岐させる-->
 					<ul class="navbar-nav mr-auto">
 						<li>
-							<form action="/sotuken-project/SignInServlet" method="get">
+							<form action="/sotuken-project/tourokuServlet" method="get">
 								<button type="submit" class="clear-decoration">登録</button>
 							</form>
 					</li>
