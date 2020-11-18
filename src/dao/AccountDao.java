@@ -103,8 +103,8 @@ public class AccountDao {
 		}
 		return s;
 	}
-	//引数のIDに一致するレコードをemployeeテーブルから1件取得する。
-		public static account searchDao(String id,String password){
+	//ログインに使うdao
+		public static account searchDao(String name){
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
@@ -117,26 +117,24 @@ public class AccountDao {
 				// ③DBMSとの接続を確立する
 				con = DriverManager.getConnection(url,user,pw);
 				// ④SQL文を作成する
-				String sql = "SELECT * FROM account WHERE id = ? and password = ?;";
+				String sql = "SELECT name,password,COUNT(name = ? or null) as count FROM account where name=?";
 				// ⑤SQL文を実行するための準備を行う
+				System.out.println("daoで受け取った名前"+name);
 				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, id);
-				pstmt.setString(2, password);
+				pstmt.setString(1, name);
+				pstmt.setString(2,name);
+
 
 				// ⑥SQL文を実行してDBMSから結果を受信する
 				rs = pstmt.executeQuery();
 
 				// ⑦実行結果を含んだインスタンスからデータを取り出す
-				rs.next();
-
-				getid = rs.getString("id");
-				String getpass = rs.getString("password");
-				getname = rs.getString("name");
-				result = new account(getid,getpass,getname);
-
-				if (id.equals(getid)&&password.equals(getpass)) {
-					System.out.println(getid+"|"+getpass+"|"+getname);
-					return result;
+				if(rs.next()) {
+					String countdata=rs.getString("count");
+					getname=rs.getString("name");
+					getpassword=rs.getString("password");
+					result = new account(countdata);
+					System.out.println("daoで受け取った一致数："+countdata+"daoで受け取った名前："+getname+"daoで受け取ったパスワード：");
 				}
 			} catch (ClassNotFoundException e) {
 				System.out.println("JDBCドライバが見つかりません。");
@@ -170,7 +168,7 @@ public class AccountDao {
 					e.printStackTrace();
 				}
 			}
-			return null;
+			return result;
 		}//引数のIDに一致するレコードをemployeeテーブルから1件取得する。
 		public static account searchDao2(String id){
 			Connection con = null;

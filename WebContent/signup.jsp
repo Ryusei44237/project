@@ -57,14 +57,14 @@
 		<p>生年月日</p>
 		<div class="form-row" style="margin-left: 28px;">
 			<div class="form-group col-md-3">
-				<label for="exampleInputYear">年</label> <input type="text"
-					class="form-control" name="AcountYear" placeholder="入力...">
+				 <input type="text"
+					class="form-control" name="AcountYear" placeholder="年">
 			</div>
 
 			<div class="form-group col-md-4">
-				<label for="exampleInputMonth">月</label> <select id="inputState"
+				 <select id="inputState"
 					class="form-control" name="AcountMonth">
-					<option selected>選択...</option>
+					<option selected>月</option>
 					<option>01</option>
 					<option>02</option>
 					<option>03</option>
@@ -81,9 +81,9 @@
 			</div>
 
 			<div class="form-group col-md-4">
-				<label for="exampleInputDay">日</label> <select id="inputState"
+				 <select id="inputState"
 					class="form-control" name="AcountDay">
-					<option selected>選択...</option>
+					<option selected>日</option>
 					<option>01</option>
 					<option>02</option>
 					<option>03</option>
@@ -127,12 +127,10 @@
 				placeholder="パスワードの再入力...">
 		</div>
 		<div class="form-group col-md-12">
-			<label for="exampleInputTel">電話番号</label> <input type="tel"
-				class="form-control" name="AcountTell" placeholder="電話番号の入力...">
+			<label for="exampleInputTel">電話番号</label> <input type="text"
+				class="form-control" name="tell" placeholder="電話番号の入力...">
 		</div>
 		<input type="hidden" name="token" value="sessions">
-		<input type="hidden" name="create_at" value="20200101">
-		<input type="hidden" name="update_at" value="20200101">
 		<div class="form-group">
 			<input type="submit" class="btn btn-primary"
 				style="margin-bottom: 5px;" value="アカウント登録">

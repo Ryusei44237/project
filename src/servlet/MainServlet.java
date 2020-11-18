@@ -33,53 +33,41 @@ public class MainServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int count=0;
 
+		//
 		/*login.jspで入力された値をloginDaoを使用し一致しているか調べる*/
-		String id=request.getParameter("id");
+		String name=request.getParameter("name");
 		String pass=request.getParameter("password");
-		String testid=id;
-		String testpass=pass;
 
 		/*CLIでデータ内容確認用コード*/
-		System.out.println(testid+"|"+testpass);
-		System.out.println(pass+"|"+testpass);
+		System.out.println("取得したユーザ名："+name+"  取得したパスワード："+pass);
 		/*ここまで*/
 
 		//データベースから値を取得
-		account result = AccountDao.searchDao(id,pass);
+		account result = AccountDao.searchDao(name);
 		//AcountDaoからgetNameという変数を引っ張ってきてメイン画面のタイトルにアカウント名を表示させる
-		String setName=AccountDao.getname;
+		String getname=AccountDao.getname;
 		String getid=AccountDao.getid;
+		String getpass=AccountDao.getpassword;
 		//ここまで
-		System.out.println("取得した名前"+setName);
-		//取得した値をリクエストスコープへ保存
-		request.setAttribute("account", result);
-		request.setAttribute("setName", setName);
-		request.setAttribute("getid", getid);
-
-		/*条件分岐(一致していた場合メイン画面へ遷移を許可する)*/
-		if (id.equals(testid) && pass.equals(testpass)) {
-			System.out.println("main.jspへ遷移します");
-			/*ここにmain.jspへの遷移コードを書く｛main.jsp｝*/
+		System.out.println("取得した名前：　"+getname+"  取得したパスワード：　"+getpass);
+		//login.jspに入力された名前とパスワードがデータベースから取り出したデータ（名前とパスワード）と完全一致していれば次のページへ遷移する
+		if (name.equals(getname)&&pass.equals(getpass)) {
+			//ページ遷移
 			String view = "/WEB-INF/view/main.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
-			}
-
-		/*一致していなかった場合は再度入力させるためリダイレクトさせる*/
-		else {
-			count+=1;
-			if (count<6) {
-				/*リダイレクト文を書く*/
-				//ログイン失敗JSPへリダイレクトする。
-				//JSPへリダイレクトする場合はWEB-INFへのアクセスは不可
-				String view = "failure.jsp";
-				response.sendRedirect(view);
-			}
-			else {
-				/*条件の不一致が6回以上続いた場合login.jspにアカウント情報を忘れた場合のアラートを出す*/
-			}
+		}else if (count<6) {
+			//変数judgementにfalseを格納し、jspに引き渡す。jspではこの値を使用し、失敗したときにアラート（のような物）を出させる。
+			String Judgement= "false";
+			request.setAttribute("judgement",Judgement );
+			//ページ遷移
+			String view = "/WEB-INF/view/login.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			dispatcher.forward(request, response);
+		}else {
+			//6回以上間違えた場合はパスワードを再登録するための画面へ遷移させる
 		}
-		/*条件分岐終了*/
+
 	}
 
 	/**
@@ -91,3 +79,7 @@ public class MainServlet extends HttpServlet {
 	}
 
 }
+////取得した値をリクエストスコープへ保存
+//request.setAttribute("account", result);
+//request.setAttribute("getname", getname);
+//request.setAttribute("getid", getid);
