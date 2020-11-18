@@ -36,6 +36,7 @@ public class TimelineServlet extends HttpServlet {
 		//受け取ったタグIDが付与されている投稿を全件検索かける
 		//daoから受け取ったresultをtimelinejspにおくる
 		//timeline.jspへの遷移を書く
+		
 	}
 
 	/**
