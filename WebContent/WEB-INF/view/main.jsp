@@ -19,7 +19,7 @@
 <script src="https://kit.fontawesome.com/86a6bb02b6.js"
 	crossorigin="anonymous"></script>
 <!-- end -->
-<title><%=request.getAttribute("setName")%>さんのトップページ</title>
+<title><%=request.getAttribute("getname")%>さんのトップページ</title>
 
 <!-- 投稿ボタンを押下した際に出てくる投稿モーダル -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -87,7 +87,7 @@
 				<!--ここでページ遷移を分岐させる-->
 					<ul class="navbar-nav mr-auto">
 						<li>
-							<form action="/sotuken-project/SignInServlet" method="get">
+							<form action="/sotuken-project/tourokuServlet" method="get">
 								<button type="submit" class="clear-decoration">登録</button>
 							</form>
 					</li>
@@ -168,7 +168,10 @@
 			<div class="card-body">
 				<h5 class="card-title">東日本大震災</h5>
 				<p class="card-text">とても大きな地震</p>
-				<a href="#" class="btn btn-primary stretched-link">タイムラインへGo</a>
+				<form action="/sotuken-project/TimelineServlet" method="get">
+					<input type="hidden" value="東日本大震災" name="tag">
+					<input type="submit" class="btn btn-light" value="タイムラインへgo">
+				</form>
 			</div>
 		</div>
 		<div class="card" style="width: 18rem;">

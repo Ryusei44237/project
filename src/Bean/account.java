@@ -10,6 +10,7 @@ public class account {
 	private String token;
 	private String create_at;
 	private String update_at;
+	private String count;
 
 	public account(){
 
@@ -27,9 +28,10 @@ public class account {
 		this.update_at = update_at;
 	}
 
-	public account(String id, String password, String name) {
+	public account(String count,  String name,String password) {
 		// TODO 自動生成されたコンストラクター・スタブ
-		this.id=id;
+		this.count=count;
+		this.name=name;
 		this.password=password;
 	}
 
@@ -44,6 +46,12 @@ public class account {
 		this.tell=tell;
 		this.create_at=create_at;
 		this.update_at=update_at;
+	}
+
+	public account(String count) {
+		// TODO 自動生成されたコンストラクター・スタブ
+		this.count=count;
+
 	}
 
 	public String getId() {
@@ -114,5 +122,13 @@ public class account {
 
 	public void setUpdate_at(String update_at) {
 		this.update_at = update_at;
+	}
+
+	public String getCount() {
+		return count;
+	}
+
+	public void setCount(String count) {
+		this.count = count;
 	}
 }
