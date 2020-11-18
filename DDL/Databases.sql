@@ -4,7 +4,7 @@ use application;
 
 CREATE TABLE account(
 
-    id int(255) AUTO_INCREMENT, /**アカウントID**/
+    id int(255) AUTO_INCREMENT, /**アカウント識別番号**/
     name VARCHAR(256),          /**アカウント名**/
     mail VARCHAR(256),          /**メールアドレス**/
     password VARCHAR(256),      /**パスワード**/
@@ -25,7 +25,7 @@ CREATE TABLE post(
     contents VARCHAR(256),      /**投稿内容**/
     img MEDIUMBLOB,             /**画像**/
     tags_id int(255),           /**投稿タグ**/
-    account_id VARCHAR(256),        /**アカウントID**/
+    account_id int(255),        /**アカウントID**/
     address VARCHAR(256),       /**投稿場所**/
     create_at date,             /**作成日時**/
     PRIMARY KEY(id)

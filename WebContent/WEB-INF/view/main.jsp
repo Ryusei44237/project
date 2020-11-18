@@ -36,7 +36,7 @@
 			<div class="modal-body">
 				<form action="/sotuken-project/PostServlet" method="get">
 					<div class="form-group">
-						<label for="exampleInputEmail1">投稿文</label> <input type="text"
+						<label>投稿文</label> <input type="text"
 							class="form-control" name="PostText" aria-describedby="emailHelp"
 							placeholder="投稿文を入力"> <small id="emailHelp"
 							class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
