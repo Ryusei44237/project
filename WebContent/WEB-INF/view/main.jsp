@@ -168,7 +168,10 @@
 			<div class="card-body">
 				<h5 class="card-title">東日本大震災</h5>
 				<p class="card-text">とても大きな地震</p>
-				<a href="#" class="btn btn-primary stretched-link">タイムラインへGo</a>
+				<form action="/sotuken-project/TimelineServlet" method="get">
+					<input type="hidden" value="東日本大震災" id="tag">
+					<input type="submit" class="btn btn-light" value="タイムラインへgo">
+				</form>
 			</div>
 		</div>
 		<div class="card" style="width: 18rem;">
