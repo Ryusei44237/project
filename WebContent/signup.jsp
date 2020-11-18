@@ -57,14 +57,14 @@
 		<p>生年月日</p>
 		<div class="form-row" style="margin-left: 28px;">
 			<div class="form-group col-md-3">
-				<label for="exampleInputYear">年</label> <input type="text"
-					class="form-control" name="AcountYear" placeholder="入力...">
+				 <input type="text"
+					class="form-control" name="AcountYear" placeholder="年">
 			</div>
 
 			<div class="form-group col-md-4">
-				<label for="exampleInputMonth">月</label> <select id="inputState"
+				 <select id="inputState"
 					class="form-control" name="AcountMonth">
-					<option selected>選択...</option>
+					<option selected>月</option>
 					<option>01</option>
 					<option>02</option>
 					<option>03</option>
@@ -81,9 +81,9 @@
 			</div>
 
 			<div class="form-group col-md-4">
-				<label for="exampleInputDay">日</label> <select id="inputState"
+				 <select id="inputState"
 					class="form-control" name="AcountDay">
-					<option selected>選択...</option>
+					<option selected>日</option>
 					<option>01</option>
 					<option>02</option>
 					<option>03</option>

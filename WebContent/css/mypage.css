@@ -132,3 +132,21 @@ body{
   .acount-form{
 	  width: 600px;
   }
+  
+  form.needs-validation{
+    border-color: slategray;
+    background-color: #FFFFFF;
+    text-align: center;
+    position:relative;
+    display: block;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%,0%);
+    max-width: 900px;
+    max-height: 700px;
+    margin-top: 20px;
+  }
+  
+  div.form-row{
+  	margin-left:120px;
+  }
