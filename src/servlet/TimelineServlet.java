@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +37,9 @@ public class TimelineServlet extends HttpServlet {
 		//受け取ったタグIDが付与されている投稿を全件検索かける
 		//daoから受け取ったresultをtimelinejspにおくる
 		//timeline.jspへの遷移を書く
-		
+		String view = "/WEB-INF/view/timeline.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+		dispatcher.forward(request, response);
 	}
 
 	/**
