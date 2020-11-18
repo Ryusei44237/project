@@ -21,6 +21,7 @@
 
 <title><%=request.getAttribute("getName")%>のページ</title>
 
+
 <!-- 投稿ボタンを押下した際に出てくる投稿モーダル -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -438,43 +439,43 @@
 <!-- アカウント情報変更タブ -->
 <form class="needs-validation" novalidate action="/sotuken-project/UpdateServlet" method="get">
 <div class="form-row">
-<div class="col-md-4 mb-3">
+<div class="col-md-5 mb-3">
 <label for="validationCustom01">ユーザID</label>
 <input type="text" class="form-control" id="validationCustom01" value=<%=request.getAttribute("id")%> name="userid" required>
 <div class="valid-feedback">
 
 </div>
 </div>
-<div class="col-md-4 mb-3">
+<div class="col-md-5 mb-3">
 <label for="validationCustom02">名前</label>
 <input type="text" class="form-control" id="validationCustom02" value=<%=request.getAttribute("name")%> name="lastname" required>
 <div class="valid-feedback">
 
 </div>
 </div>
-<div class="col-md-4 mb-3">
-<label for="validationCustomUsername">メール</label>
-<div class="input-group">
-<input type="text" class="form-control" id="validationCustomUsername" value=<%=request.getAttribute("mail")%> aria-describedby="inputGroupPrepend"  name="userId" required>
-<div class="invalid-feedback">
-</div>
-</div>
-</div>
 </div>
 <div class="form-row">
-<div class="col-md-6 mb-3">
+<div class="col-md-5 mb-3">
 <label for="validationCustom03">電話番号</label>
 <input type="text" class="form-control" id="validationCustom03" value=<%=request.getAttribute("tell")%> name="tell" required>
 <div class="invalid-feedback">
 </div>
 </div>
-<div class="col-md-3 mb-3">
+<div class="col-md-5 mb-3">
+<label for="validationCustom06">メール</label>
+<input type="text" class="form-control" id="validationCustom06" value=<%=request.getAttribute("mail")%> aria-describedby="inputGroupPrepend"  name="userId" required>
+<div class="invalid-feedback">
+</div>
+</div>
+</div>
+<div class="form-row">
+<div class="col-md-5 mb-3">
 <label for="validationCustom04">現在のパスワード</label>
 <input type="password" class="form-control" id="validationCustom04" placeholder="パスワード" name="password" required>
 <div class="invalid-feedback">
 </div>
 </div>
-<div class="col-md-3 mb-3">
+<div class="col-md-5 mb-3">
 <label for="validationCustom05">新しいパスワード</label>
 <input type="password" class="form-control" id="validationCustom05" placeholder="パスワードの再入力をお願いします" name="password2" required>
 <div class="invalid-feedback">
@@ -495,6 +496,7 @@
 </div>
 <button class="btn btn-primary" type="submit">アカウント情報変更</button>
 </form>
+</div>
 
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
