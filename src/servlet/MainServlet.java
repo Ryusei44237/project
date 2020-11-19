@@ -52,6 +52,7 @@ public class MainServlet extends HttpServlet {
 		System.out.println("取得した名前：　"+getname+"  取得したパスワード：　"+getpass);
 		//login.jspに入力された名前とパスワードがデータベースから取り出したデータ（名前とパスワード）と完全一致していれば次のページへ遷移する
 		if (name.equals(getname)&&pass.equals(getpass)) {
+			request.setAttribute("getname",getname );
 			//ページ遷移
 			String view = "/WEB-INF/view/main.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
