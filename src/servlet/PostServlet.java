@@ -29,10 +29,11 @@ public class PostServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		String PostId = request.getParameter("PostId");
+		String PostId = request.getParameter("getId");
 		String PostContents = request.getParameter("PostText");
 		String PostImg = request.getParameter("PostImg");
 		String PostTags_Id = request.getParameter("PostTags_Id");
+
 
 
 

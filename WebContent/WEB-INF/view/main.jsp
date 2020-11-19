@@ -34,12 +34,16 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="/sotuken-project/PostServlet" method="get">
+				<form action="/sotuken-project/PostServlet" method="get" >
 					<div class="form-group">
 						<label for="exampleInputEmail1">投稿文</label>
-						 <input type="text"class="form-control" name="PostText" aria-describedby="emailHelp"placeholder="投稿文を入力">
-						<input type="hidden"name="accountid"value=<%=request.getAttribute("getid")%>>
-						 <small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
+						 <input type="text"class="form-control" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
+						<input type="hidden"name="accountid"value=<%=request.getAttribute("getId")%>>
+						<form method="POST" enctype="multipart/form-data" action="../UploadServlet">
+							<input type="file" name="file"/><br />
+							<input type="submit" value="アップロード" />
+						</form>
+						<small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
 					</div>
 					<div class="form-group form-check">
 						<input type="checkbox" class="form-check-input" id="exampleCheck1">
