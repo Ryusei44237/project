@@ -36,10 +36,10 @@
 			<div class="modal-body">
 				<form action="/sotuken-project/PostServlet" method="get">
 					<div class="form-group">
-						<label>投稿文</label> <input type="text"
-							class="form-control" name="PostText" aria-describedby="emailHelp"
-							placeholder="投稿文を入力"> <small id="emailHelp"
-							class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
+						<label for="exampleInputEmail1">投稿文</label>
+						 <input type="text"class="form-control" name="PostText" aria-describedby="emailHelp"placeholder="投稿文を入力">
+						<input type="hidden"name="accountid"value=<%=request.getAttribute("getid")%>>
+						 <small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
 					</div>
 					<div class="form-group form-check">
 						<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -139,14 +139,13 @@
 		</ol>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="../image/山.jpg" alt="これは山の画像です" width="800" height="400">
+				<iframe width="560" height="315"src="https://www.youtube-nocookie.com/embed/WV5w19J-cAA? loop=1&playlist=vdxoDyNAoH0&autoplay=1&mute=1&rel=0&modestbranding=1"frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div class="carousel-item">
-				<img src="../image/空.jpg" alt="これは空の画像です" width="800" height="400">
+				<iframe width="560" height="315"src="https://www.youtube-nocookie.com/embed/coYw-eVU0Ks? loop=1&playlist=vdxoDyNAoH0&autoplay=1&mute=1&rel=0&modestbranding=1"frameborder="0" allowfullscreen></iframe>
 			</div>
 			<div class="carousel-item">
-				<img src="../image/沖縄海.jpg" alt="これは沖縄の海の画像です" width="800"
-					height="400">
+				<iframe width="560" height="315"src="https://www.youtube-nocookie.com/embed/WXoMJJCaQPU? loop=1&playlist=vdxoDyNAoH0&autoplay=1&mute=1&rel=0&modestbranding=1"frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 		<a class="carousel-control-prev" href="#carouselExampleIndicators"
@@ -164,7 +163,7 @@
     -->
 	<div class="card-deck">
 		<div class="card" style="width: 18rem;">
-			<img src="../image/空.jpg" alt="" width="100%" height="200">
+			<img src="${pageContext.request.contextPath}/app-image/東日本大震災.jpg" alt="" width="100%" height="200">
 			<div class="card-body">
 				<h5 class="card-title">東日本大震災</h5>
 				<p class="card-text">とても大きな地震</p>
@@ -175,7 +174,7 @@
 			</div>
 		</div>
 		<div class="card" style="width: 18rem;">
-			<img src="../image/空.jpg" alt="" width="100%" height="200">
+			<img src="${pageContext.request.contextPath}/app-image/熊本地震.jpg" alt="" width="100%" height="200">
 			<div class="card-body">
 				<h5 class="card-title">熊本地震</h5>
 				<p class="card-text">大きな揺れが人々を襲った</p>
@@ -183,7 +182,7 @@
 			</div>
 		</div>
 		<div class="card" style="width: 18rem;">
-			<img src="../image/空.jpg" alt="" width="100%" height="200">
+			<img src="${pageContext.request.contextPath}/app-image/台風.jpg" alt="" width="100%" height="200">
 			<div class="card-body">
 				<h5 class="card-title">台風</h5>
 				<p class="card-text">太平洋側の地域に大きな被害をもたらした。</p>
