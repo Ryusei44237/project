@@ -479,7 +479,6 @@
 <label for="validationCustom05">新しいパスワード</label>
 <input type="password" class="form-control" id="validationCustom05" placeholder="パスワードの再入力をお願いします" name="password2" required>
 <div class="invalid-feedback">
-
 </div>
 </div>
 </div>
