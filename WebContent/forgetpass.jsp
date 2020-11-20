@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/forgetpass.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/forgetpass.css">
     <title>Registration</title>
 </head>
 <header>
@@ -42,16 +42,14 @@
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="メールアドレスの入力...">
         </div>
         <p>生年月日</p>
-        <div class="form-row" style="margin-left: 28px;">
-            <div class="form-group col-md-3">
-                <label for="exampleInputYear">年</label>
-                <input type="text" class="form-control" id="exampleInputYear" placeholder="入力...">
+        <div class="form-row" style="margin: 0px 28px 0px 28px;">
+            <div class="form-group col-md-4">
+                <input type="text" class="form-control" id="exampleInputYear" placeholder="年...">
               </div>
 
           <div class="form-group col-md-4">
-            <label for="exampleInputMonth">月</label>
             <select id="inputState" class="form-control">
-              <option selected>選択...</option>
+              <option selected>月...</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
@@ -68,9 +66,8 @@
           </div>
 
           <div class="form-group col-md-4">
-            <label for="exampleInputDay">日</label>
             <select id="inputState" class="form-control">
-              <option selected>選択...</option>
+              <option selected>日...</option>
               <option>1</option>
               <option>2</option>
               <option>3</option>
