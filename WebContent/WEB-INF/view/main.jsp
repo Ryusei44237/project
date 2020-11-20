@@ -34,7 +34,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="/sotuken-project/PostServlet" method="get">
+				<form action="/sotuken-project/PostServlet" method="post">
 					<div class="form-group">
 						<label for="exampleInputEmail1">投稿文</label>
 						 <input type="text"class="form-control" name="PostText" aria-describedby="emailHelp"placeholder="投稿文を入力">

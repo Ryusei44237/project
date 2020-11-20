@@ -33,9 +33,6 @@ public class PostServlet extends HttpServlet {
 		String PostContents = request.getParameter("PostText");
 		String PostImg = request.getParameter("PostImg");
 		String PostTags_Id = request.getParameter("PostTags_Id");
-
-
-
 	}
 
 	/**

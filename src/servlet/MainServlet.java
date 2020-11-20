@@ -31,8 +31,16 @@ public class MainServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int count=0;
 
+
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		int count=0;
 		//
 		/*login.jspで入力された値をloginDaoを使用し一致しているか調べる*/
 		String name=request.getParameter("name");
@@ -68,19 +76,6 @@ public class MainServlet extends HttpServlet {
 		}else {
 			//6回以上間違えた場合はパスワードを再登録するための画面へ遷移させる
 		}
-
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }
-////取得した値をリクエストスコープへ保存
-//request.setAttribute("account", result);
-//request.setAttribute("getname", getname);
-//request.setAttribute("getid", getid);

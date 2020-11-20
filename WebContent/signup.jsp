@@ -37,7 +37,7 @@
 	</nav>
 </header>
 <body>
-	<form action="/sotuken-project/SignInServlet" method="get">
+	<form action="/sotuken-project/SignInServlet" method="post">
 		<h2>新規アカウント登録</h2>
 		<p>無料でご利用いただけます。</p>
 		<div class="form-group col-md-12">
@@ -60,7 +60,7 @@
 				 <input type="text"
 					class="form-control" name="AcountYear" placeholder="年">
 			</div>
-			
+
 			<div class="form-group col-md-4">
 				 <select id="inputState"
 					class="form-control" name="AcountMonth">
