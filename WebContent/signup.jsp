@@ -28,7 +28,7 @@
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
 				<li class="nav-item active"><a class="nav-link"
-					href="../html/login.html">ログイン<span class="sr-only">(current)</span></a>
+					href="login.jsp">ログイン<span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item active"><a class="nav-link disabled"
 					href="test.html">登録</a></li>
@@ -40,10 +40,6 @@
 	<form action="/sotuken-project/SignInServlet" method="post">
 		<h2>新規アカウント登録</h2>
 		<p>無料でご利用いただけます。</p>
-		<div class="form-group col-md-12">
-			<label for="exampleInputId">アカウントID</label> <input type="text"
-				class="form-control" name="id" placeholder="作成したいアカウントIDを入力...">
-		</div>
 		<div class="form-group col-md-12">
 			<label for="exampleInputName">アカウント名</label> <input type="text"
 				class="form-control" name="name"
