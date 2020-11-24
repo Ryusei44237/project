@@ -48,7 +48,7 @@ public class PostDao {
 				//⑤SQL文の元を作成する
 				//?をプレースホルダと言います。
 				//後の手順で?に値を設定します。
-				String sql = "INSERT INTO post VALUE(?, ?, ?, ?, ?, ?, ?)";
+				String sql = "INSERT INTO post(contents, img, tags_id, account_id, address, create_at) VALUE(?, ?, ?, ?, ?, ?)";
 
 				//⑥SQLを実行するための準備(構文解析)
 				pstmt = con.prepareStatement(sql);
@@ -57,13 +57,12 @@ public class PostDao {
 				//第1引数→何番目の?に設定するか(1から数える)
 				//第2引数→?に設定する値
 
-				pstmt.setInt(1, s.getId());
-				pstmt.setString(2, s.getContents());
-				pstmt.setString(3, s.getImg());
-				pstmt.setInt(4, s.getTags_Id());
-				pstmt.setInt(5, s.getAccount_Id());
-				pstmt.setString(6, s.getAddress());
-				pstmt.setString(7, s.getCreate_At());
+				pstmt.setString(1, s.getContents());
+				pstmt.setString(2, s.getImg());
+				pstmt.setInt(3, s.getTags_Id());
+				pstmt.setInt(4, s.getAccount_Id());
+				pstmt.setString(5, s.getAddress());
+				pstmt.setString(6, s.getCreate_At());
 
 
 				System.out.println("実行できてる");
