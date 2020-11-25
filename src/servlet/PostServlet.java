@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.post;
+
 /**
  * Servlet implementation class PostServlet
  */
@@ -40,11 +42,16 @@ public class PostServlet extends HttpServlet {
 		String PostContents = request.getParameter("PostText");
 		String PostImg = request.getParameter("PostImg");
 		String PostTags_Id = request.getParameter("PostTags_Id");
-		String PostAddress = null;
+		String PostAddress = "null";
 		String PostCreate_at = time;
-		
-		post s = new post(PostId)
-		
+
+		post s = new post(PostId, PostContents, PostImg, PostTags_Id, PostAddress, PostCreate_at);
+		post result = dao.PostDao.insertPost(s);
+
+
+
+
+
 
 
 

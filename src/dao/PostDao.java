@@ -45,6 +45,10 @@ public class PostDao {
 				//第3引数→パスワード
 				con = DriverManager.getConnection(url, user, pw);
 
+				//Stringmigi⇒int
+				int Tags_Id = Integer.parseInt(s.getTags_Id());
+				int Account_Id = Integer.parseInt(s.getAccount_Id());
+
 				//⑤SQL文の元を作成する
 				//?をプレースホルダと言います。
 				//後の手順で?に値を設定します。
@@ -59,8 +63,8 @@ public class PostDao {
 
 				pstmt.setString(1, s.getContents());
 				pstmt.setString(2, s.getImg());
-				pstmt.setInt(3, s.getTags_Id());
-				pstmt.setInt(4, s.getAccount_Id());
+				pstmt.setInt(3, Tags_Id);
+				pstmt.setInt(4, Account_Id);
 				pstmt.setString(5, s.getAddress());
 				pstmt.setString(6, s.getCreate_At());
 

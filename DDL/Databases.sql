@@ -19,6 +19,7 @@ CREATE TABLE account(
 );
 
 
+
 CREATE TABLE post(
 
     id int(255) AUTO_INCREMENT, /**投稿ID**/
@@ -56,7 +57,9 @@ CREATE TABLE post_tags(
 
 /**テスト**/
 INSERT INTO account VALUE(1,'test','test@morijyobi.ac.jp','testaccount','2020-01-01','08012345678','','2020-08-08','2020-09-09'),
-(2,'test2','test@morijyobi.ac.jp','testaccount','2020-01-01','08012345678','','2020-08-08','2020-09-09');  /**テストアカウント**/
+(2,'test2','test@morijyobi.ac.jp','testaccount','2020-01-01','08012345678','','2020-08-08','2020-09-09');  
+INSERT INTO account(name, mail, password, birthday, tell, token, create_at, update_at) VALUE('test','test@morijyobi.ac.jp','testaccount','2020-01-01','08012345678','','2020-08-08','2020-09-09');
+/**テストアカウント**/
 
 INSERT INTO post(contents, img, tags_id, account_id, address, create_at) VALUE('台風災害','',1,1,'xxxxx','2020-10-10'),('地震災害','',2,2,'xxxxx','2020-10-10'),('地震災害','',2,2,'xxxxx','2020-10-10');
 
