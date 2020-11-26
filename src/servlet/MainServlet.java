@@ -47,7 +47,7 @@ public class MainServlet extends HttpServlet {
 		String pass=request.getParameter("password");
 
 		/*CLIでデータ内容確認用コード*/
-		System.out.println("取得したユーザ名："+name+"  取得したパスワード："+pass);
+		System.out.println("ログインフォームで　取得したユーザ名："+name+"  取得したパスワード："+pass);
 		/*ここまで*/
 
 		//データベースから値を取得
@@ -57,11 +57,12 @@ public class MainServlet extends HttpServlet {
 		String getid=AccountDao.getid;
 		String getpass=AccountDao.getpassword;
 		//ここまで
-		System.out.println("取得した名前：　"+getname+"  取得したパスワード：　"+getpass);
+		System.out.println("データベースから　取得したユーザ名：　"+getname+"  取得したパスワード：　"+getpass);
 		//login.jspに入力された名前とパスワードがデータベースから取り出したデータ（名前とパスワード）と完全一致していれば次のページへ遷移する
 		if (name.equals(getname)&&pass.equals(getpass)) {
 			request.setAttribute("getname",getname );
 			//ページ遷移
+			System.out.println("ユーザ名とパスワードが一致しました。");
 			String view = "/WEB-INF/view/main.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
@@ -69,6 +70,7 @@ public class MainServlet extends HttpServlet {
 			//変数judgementにfalseを格納し、jspに引き渡す。jspではこの値を使用し、失敗したときにアラート（のような物）を出させる。
 			String Judgement= "false";
 			request.setAttribute("judgement",Judgement );
+			System.out.println("ユーザ名とパスワードが一致しませんでした。");
 			//ページ遷移
 			String view = "/WEB-INF/view/login.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);

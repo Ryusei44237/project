@@ -32,9 +32,9 @@ public class UpdateServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//メインjspからアカウントIDを取得し、アカウントIDをもとに行検索をかける。
-		String id=request.getParameter("id");
-		System.out.println("取得ID"+id);
-		account result = AccountDao.searchDao2(id);
+		String name=request.getParameter("name");
+		System.out.println("main.jspから　取得した名前　"+name+"を使用しアカウント更新をする");
+		account result = AccountDao.searchDao2(name);
 		String getid=AccountDao.getid;
 		String getname=AccountDao.getname;
 		String getpass=AccountDao.getpassword;
