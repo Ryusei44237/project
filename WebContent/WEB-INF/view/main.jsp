@@ -39,7 +39,29 @@
 						<label for="exampleInputEmail1">投稿文</label>
 						 <input type="text"class="form-control" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
 						<input type="hidden"name="accountid"value=<%=request.getAttribute("getId")%>>
-						<input type="file" name="file"/>
+						<div id="upFileWrap">
+    						<div id="inputFile">
+       						 <!-- ドラッグ&ドロップエリア -->
+        						<p id="dropArea">ここにファイルをドロップしてください<br>または</p>
+
+								<!-- 通常のinput[type=file] -->
+        						<div id="inputFileWrap">
+            						<input type="file" name="uploadFile" id="uploadFile">
+            						<div id="btnInputFile"><span>ファイルを選択する</span></div>
+           							<div id="btnChangeFile"><span>ファイルを変更する</span></div>
+       							</div>
+   							 </div>
+						</div>
+						<div class="form-group col-md-4">
+				 			<select id="inputState"
+								class="form-control" name="AcountMonth">
+								<option selected>タグ選択</option>
+								<option>台風</option>
+								<option>地震</option>
+								<option>津波</option>
+								<option>洪水</option>
+							</select>
+						</div>
 						<small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
 					</div>
 					<div class="form-group form-check">
