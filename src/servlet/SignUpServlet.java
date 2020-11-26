@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
@@ -39,13 +40,19 @@ public class SignUpServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 	    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	    String time = sdf.format(timestamp);
 		//挿入したい値をjsp空引っ張ってきた
-				String id = request.getParameter("id");//アカウントID
+	    		String id = null;
 				String name=request.getParameter("name");//アカウントネーム
+
+				 try {
+				      byte[] byteData = name.getBytes("ISO_8859_1");
+				      name = new String(byteData, "UTF-8");
+				    }catch(UnsupportedEncodingException e){
+				    }
+
 				String mail=request.getParameter("mail");//メールアドレス
 				String password=request.getParameter("password");//パスワード・ハッシュかける処理を作成
 				//ハッシュ化
@@ -62,7 +69,7 @@ public class SignUpServlet extends HttpServlet {
 				String create_at=time;//作成日
 				String update_at=null;//更新日
 				//取得した値をCLIに表示させる
-				System.out.println(id+"|"+name+"|"+mail+"|"+password+"|"+birthday+"|"+tell+"|"+token+"|"+create_at+"|"+update_at);
+				System.out.println("登録された値｜　名前　"+name+"|メールアドレス　"+mail+"|パスワード　"+password+"|生年月日　"+birthday+"|電話番号　"+tell+"|トークン　"+token+"|作成日　"+create_at+"|更新日　"+update_at);
 				//Daoから値を引っ張ってきた
 				account s = new account(id,name,mail,password,birthday,tell,token,create_at,update_at);
 				account result = dao.AccountDao.inserAccount(s);

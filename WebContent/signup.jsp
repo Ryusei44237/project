@@ -37,7 +37,7 @@
 	</nav>
 </header>
 <body>
-	<form action="/sotuken-project/SignInServlet" method="post">
+	<form action="/sotuken-project/SignInServlet" method="post" >
 		<h2>新規アカウント登録</h2>
 		<p>無料でご利用いただけます。</p>
 		<div class="form-group col-md-12">

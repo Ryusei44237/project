@@ -121,7 +121,7 @@
 						</li>
 						<li>
 							<form action="/sotuken-project/UpdateServlet" method="get">
-								<button type="submit" class="clear-decoration" name="id" value=<%=request.getAttribute("getid") %>>マイページ</button>
+								<button type="submit" class="clear-decoration" name="name" value=<%=request.getAttribute("getname") %>>マイページ</button>
 							</form>
 						</li>
 					</ul>

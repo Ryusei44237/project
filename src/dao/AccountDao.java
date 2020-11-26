@@ -18,7 +18,7 @@ public class AccountDao {
 	//ユーザ
 	private static final String user = "root";
 	//パスワード
-	private static final String pw = "Sql39sia";
+	private static final String pw = "44237";
 	public static String getname = null;
 	public static String getid=null;
 	public static String getmail=null;
@@ -57,7 +57,7 @@ public class AccountDao {
 			//⑦プレースホルダに値を設定
 			//第1引数→何番目の?に設定するか(1から数える)
 			//第2引数→?に設定する値
-			pstmt.setString(1, s.getId());
+			pstmt.setString(1, null);
 			pstmt.setString(2, s.getName());
 			pstmt.setString(3, s.getMail());
 			pstmt.setString(4, s.getPassword());
@@ -68,10 +68,9 @@ public class AccountDao {
 			pstmt.setString(9, s.getUpdate_at());
 
 
-			System.out.println("実行できてる");
+			System.out.println("アカウント登録完了！");
 			//⑧SQLを実行し、DBから結果を受領する
 			int result= pstmt.executeUpdate();
-			System.out.println(result + "件登録されました。");
 
 		}  catch (SQLException e){
 			System.out.println("DBアクセスに失敗しました。");
@@ -119,7 +118,6 @@ public class AccountDao {
 				// ④SQL文を作成する
 				String sql = "SELECT name,password,COUNT(name = ? or null) as count FROM account where name=?";
 				// ⑤SQL文を実行するための準備を行う
-				System.out.println("daoで受け取った名前"+name);
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, name);
 				pstmt.setString(2,name);
@@ -134,7 +132,6 @@ public class AccountDao {
 					getname=rs.getString("name");
 					getpassword=rs.getString("password");
 					result = new account(countdata);
-					System.out.println("daoで受け取った一致数："+countdata+"daoで受け取った名前："+getname+"daoで受け取ったパスワード：");
 				}
 			} catch (ClassNotFoundException e) {
 				System.out.println("JDBCドライバが見つかりません。");
@@ -169,8 +166,8 @@ public class AccountDao {
 				}
 			}
 			return result;
-		}//引数のIDに一致するレコードをemployeeテーブルから1件取得する。
-		public static account searchDao2(String id){
+		}
+		public static account searchDao2(String name){
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
@@ -183,10 +180,10 @@ public class AccountDao {
 				// ③DBMSとの接続を確立する
 				con = DriverManager.getConnection(url,user,pw);
 				// ④SQL文を作成する
-				String sql = "SELECT * FROM account WHERE id = ?;";
+				String sql = "SELECT * FROM account WHERE name = ?;";
 				// ⑤SQL文を実行するための準備を行う
 				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, id);
+				pstmt.setString(1, name);
 
 				// ⑥SQL文を実行してDBMSから結果を受信する
 				rs = pstmt.executeQuery();

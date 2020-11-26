@@ -19,7 +19,7 @@
 	crossorigin="anonymous"></script>
 <!-- end -->
 
-<title><%=request.getAttribute("getName")%>のページ</title>
+<title><%=request.getAttribute("name")%>のページ</title>
 
 
 <!-- 投稿ボタンを押下した際に出てくる投稿モーダル -->
