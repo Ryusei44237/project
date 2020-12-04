@@ -116,9 +116,10 @@
 
 		</div>
 		<div class="form-group col-md-12">
-			<label for="exampleInputPassword1">パスワード</label> <input
-				type="password" class="form-control" id="exampleInputPassword1"
-				placeholder="パスワードの入力..."> <input type="password"
+			<label for="exampleInputPassword1">パスワード</label>
+				<input type="password" class="form-control" id="exampleInputPassword1"
+				placeholder="パスワードの入力...">
+				<input type="password"
 				class="form-control" name="password"
 				placeholder="パスワードの再入力...">
 		</div>
