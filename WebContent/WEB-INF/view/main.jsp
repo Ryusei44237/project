@@ -34,14 +34,14 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="/sotuken-project/PostServlet" enctype="multipart/form-data" method="POST" >
+				<form action="/sotuken-project/PostServlet" enctype="multipart/form-data" method="post" >
 					<div class="form-group">
 						<label for="exampleInputEmail1">投稿文</label>
-						 <input type="text"class="form-control" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
+						<input type="text"class="form-control" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
 						<input type="hidden"name="accountid"value=<%=request.getAttribute("getId")%>>
 						<div id="upFileWrap">
     						<div id="inputFile">
-       						 <!-- ドラッグ&ドロップエリア -->
+       						<!-- ドラッグ&ドロップエリア -->
         						<p id="dropArea">ここにファイルをドロップしてください<br>または</p>
 
 								<!-- 通常のinput[type=file] -->
@@ -54,7 +54,7 @@
 						</div>
 						<div class="form-group col-md-4">
 				 			<select id="inputState"
-								class="form-control" name="AcountMonth">
+								class="form-control" name="PostTags">
 								<option selected>タグ選択</option>
 								<option>台風</option>
 								<option>地震</option>

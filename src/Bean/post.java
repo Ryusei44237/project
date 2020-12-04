@@ -11,11 +11,6 @@ public class post {
 	private String create_at;
 
 
-	public post() {
-
-
-
-	}
 
 
 	public post(String id, String contents, String img, String tags_id, String account_id, String address, String create_at ) {
