@@ -38,16 +38,18 @@ public class PostServlet extends HttpServlet {
         String time = sdf.format(timestamp);
 
 
-		String PostId = request.getParameter("getId");
-		String PostContents = request.getParameter("PostText");
-		String PostImg = request.getParameter("PostImg");
-		String PostTags_Id = request.getParameter("PostTags_Id");
+		String PostContents = request.getParameter("PostContents");
+		String PostImg = request.getParameter("uploadFile");
+		String PostTags_Id = request.getParameter("PostTags");
+		String PostId = request.getParameter("accountid");
 		String PostAddress = "null";
 		String PostCreate_at = time;
 
-		post s = new post(PostId, PostContents, PostImg, PostTags_Id, PostAddress, PostCreate_at);
-		post result = dao.PostDao.insertPost(s);
+		post s = new post(PostContents, PostImg, PostTags_Id, PostId, PostAddress, PostCreate_at);
 
+		System.out.println(PostContents+PostImg+PostTags_Id+PostId+PostAddress+PostCreate_at);
+
+		post result = dao.PostDao.insertPost(s);
 
 
 
