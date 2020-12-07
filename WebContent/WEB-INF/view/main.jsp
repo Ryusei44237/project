@@ -21,6 +21,8 @@
 <!-- end -->
 <title><%=request.getAttribute("getname")%>さんのトップページ</title>
 
+</head>
+
 <!-- 投稿ボタンを押下した際に出てくる投稿モーダル -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
 	aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -34,10 +36,10 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="/sotuken-project/PostServlet" enctype="multipart/form-data" method="post" >
+				<form action="/sotuken-project/PostServlet" enctype="multipart/form-data" method="POST" >
 					<div class="form-group">
 						<label for="exampleInputEmail1">投稿文</label>
-						<input type="text"class="form-control" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
+						<input type="text"class="form-control" id = "testname" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
 						<input type="hidden"name="accountid"value=<%=request.getAttribute("getId")%>>
 						<div id="upFileWrap">
     						<div id="inputFile">
@@ -63,16 +65,16 @@
 							</select>
 						</div>
 						<small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
+						<input type="submit" class="btn btn-primary" value="投稿">
 					</div>
-					<div class="form-group form-check">
+				<!--<div class="form-group form-check">
 						<input type="checkbox" class="form-check-input" id="exampleCheck1">
 						<label class="form-check-label" for="exampleCheck1">プライバシーポリシーに同意</label>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary"
-							data-dismiss="modal">キャンセル</button>
-						<input type="submit" class="btn btn-primary" value="投稿">
-					</div>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+
+					</div>-->
 				</form>
 			</div>
 
@@ -91,7 +93,7 @@
 </div>
 <!--  -->
 
-</head>
+
 <!-- ヘッド終了　以下body -->
 <body>
 	<!-- hedear開始 -->
@@ -233,9 +235,16 @@
 		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 		crossorigin="anonymous"></script>
+	<script>
+		var formObj = document.getElementById("testname");
+		console.log(formObj);
+
+	</script>
+
 	<!--ここまで-->
 
 </body>
 <!-- body終了 -->
+
 
 </html>
