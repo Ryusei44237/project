@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- 確認 -->
 <script>onLoad="setTimeout(5000)"</script>
 <meta charset="UTF-8">
 <title>アカウント管理</title>

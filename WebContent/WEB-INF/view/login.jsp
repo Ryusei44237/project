@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <!--これでいける-->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,7 @@
 	href="${pageContext.request.contextPath}/css/login.css">
 <title>Registration</title>
 </head>
-
+<!-- 確認 -->
 <header>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="nav-link disabled" href="/WebContent/WEB-INF/view/main.jsp"> <img
