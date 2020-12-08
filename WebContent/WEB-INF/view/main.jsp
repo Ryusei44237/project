@@ -66,7 +66,7 @@
 							</select>
 						</div>
 						<small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
-						<input type="submit" class="btn btn-primary" value="投稿">
+						<input type="submit" id = "ajaxTest" class="btn btn-primary" value="投稿">
 					</div>
 				<!--<div class="form-group form-check">
 						<input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -237,9 +237,19 @@
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 		crossorigin="anonymous"></script>
 	<script>
-		var formObj = document.getElementById("testname");
-		console.log(formObj);
-
+		$('#ajaxTest').on('click', function(){
+		  $.ajax({
+		    url : 'PostServlet',
+		    type : 'POST',
+		    data : {data1 : 'あいうえお'},
+		    success : function(response) {
+		      alert(response);
+		    },
+		    error : function() {
+		      console.log('通信エラーです');
+		    }
+		  })
+		})
 	</script>
 
 	<!--ここまで-->
