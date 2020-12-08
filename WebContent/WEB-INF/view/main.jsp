@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- 確認 -->
 <meta charset="utf-8">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
 <meta name="viewport"
