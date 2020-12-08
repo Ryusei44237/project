@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="../css/timeline.css">
+        <link rel="stylesheet" href="/WebContent/css/timeline.css">
         <title>Registration</title>
     </head>
     <header>
@@ -45,9 +45,9 @@
 		<meta name="keywords" content="timeline, vertical, layout, style, component, web development, template, responsive" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="../css/default.css" />
-		<link rel="stylesheet" type="text/css" href="../css/component.css" />
-		<script src="js/modernizr.custom.js"></script>
+		<link rel="stylesheet" type="text/css" href="/WebContent/css/timeline.css" />
+		<link rel="stylesheet" type="text/css" href="/WebContent/css/timeline2.css" />
+		<script src="/WebContent/js/timeline.js"></script>
 	</head>
 	<body>
 		<div class="container">
