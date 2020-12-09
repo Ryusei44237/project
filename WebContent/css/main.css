@@ -2,6 +2,13 @@ body{
   z-index: 1;
   margin-top: 50px;
 }
+
+#modal{
+    position: relative;
+    z-index: 9998;
+    display: block;
+}
+
 header{
   position: fixed;            /* ヘッダーの固定 */
   top: 0px;                   /* 位置(上0px) */

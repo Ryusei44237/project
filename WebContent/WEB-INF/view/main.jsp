@@ -24,65 +24,7 @@
 
 </head>
 
-<!-- 投稿ボタンを押下した際に出てくる投稿モーダル -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-	aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">投稿エリア</h5>
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<form action="/sotuken-project/PostServlet" enctype="multipart/form-data" method="POST" >
-					<div class="form-group">
-						<label for="exampleInputEmail1">投稿文</label>
-						<input type="text"class="form-control" id = "testname" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
-						<input type="hidden"name="accountid"value=<%=request.getAttribute("getId")%>>
-						<div id="upFileWrap">
-    						<div id="inputFile">
-       						<!-- ドラッグ&ドロップエリア -->
-        						<p id="dropArea">ここにファイルをドロップしてください<br>または</p>
 
-								<!-- 通常のinput[type=file] -->
-        						<div id="inputFileWrap">
-            						<input type="file" name="uploadFile" id="uploadFile">
-            						<div id="btnInputFile"><span>ファイルを選択する</span></div>
-           							<div id="btnChangeFile"><span>ファイルを変更する</span></div>
-       							</div>
-   							 </div>
-						</div>
-						<div class="form-group col-md-4">
-				 			<select id="inputState"
-								class="form-control" name="PostTags">
-								<option selected>タグ選択</option>
-								<option>台風</option>
-								<option>地震</option>
-								<option>津波</option>
-								<option>洪水</option>
-							</select>
-						</div>
-						<small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
-						<input type="submit" id = "ajaxTest" class="btn btn-primary" value="投稿">
-					</div>
-				<!--<div class="form-group form-check">
-						<input type="checkbox" class="form-check-input" id="exampleCheck1">
-						<label class="form-check-label" for="exampleCheck1">プライバシーポリシーに同意</label>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
-
-					</div>-->
-				</form>
-			</div>
-
-		</div>
-	</div>
-</div>
-<!-- 投稿モーダルここまで -->
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
 	aria-labelledby="mySmallModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-sm">
@@ -97,6 +39,67 @@
 
 <!-- ヘッド終了　以下body -->
 <body>
+	<div id = "modal"></div>
+		<!-- 投稿ボタンを押下した際に出てくる投稿モーダル -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">投稿エリア</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+					<form action="/sotuken-project/PostServlet" enctype="multipart/form-data" method="POST" >
+						<div class="form-group">
+							<label for="exampleInputEmail1">投稿文</label>
+							<input type="text"class="form-control" id = "testname" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
+							<input type="hidden"name="accountid"value=<%=request.getAttribute("getId")%>>
+							<div id="upFileWrap">
+	    						<div id="inputFile">
+	       						<!-- ドラッグ&ドロップエリア -->
+	        						<p id="dropArea">ここにファイルをドロップしてください<br>または</p>
+
+									<!-- 通常のinput[type=file] -->
+	        						<div id="inputFileWrap">
+	            						<input type="file" name="uploadFile" id="uploadFile">
+	            						<div id="btnInputFile"><span>ファイルを選択する</span></div>
+	           							<div id="btnChangeFile"><span>ファイルを変更する</span></div>
+	       							</div>
+	   							 </div>
+							</div>
+								<div class="form-group col-md-4">
+					 				<select id="inputState"
+										class="form-control" name="PostTags">
+										<option selected>タグ選択</option>
+										<option>台風</option>
+										<option>地震</option>
+										<option>津波</option>
+										<option>洪水</option>
+									</select>
+								</div>
+								<small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
+								<input type="submit" id = "ajaxTest" class="btn btn-primary" value="投稿">
+							</div>
+						<!--<div class="form-group form-check">
+								<input type="checkbox" class="form-check-input" id="exampleCheck1">
+								<label class="form-check-label" for="exampleCheck1">プライバシーポリシーに同意</label>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+
+							</div>-->
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 投稿モーダルここまで -->
 	<!-- hedear開始 -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
