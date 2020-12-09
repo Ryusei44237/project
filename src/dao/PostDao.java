@@ -48,15 +48,7 @@ public class PostDao {
 
 				//Stringmigi⇒int
 
-				int Tags_Id = 0;
-				String judg = s.getTags_Id();
-
-				if( judg.equals("地震")) {
-
-					Tags_Id = 1;
-
-				}
-
+				int Tags_Id = Integer.parseInt(s.getTags_Id());
 				int Account_Id = Integer.parseInt(s.getAccount_Id());
 
 				//⑤SQL文の元を作成する

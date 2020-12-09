@@ -62,8 +62,6 @@ public class PostServlet extends HttpServlet {
 		post result = dao.PostDao.insertPost(s);
 
 
-
-		doGet(request, response);
 	}
 
 
