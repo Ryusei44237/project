@@ -60,7 +60,8 @@ public class PostServlet extends HttpServlet {
 		System.out.println(PostContents+PostImg+PostTags_Id+PostAccount_Id+PostAddress+PostCreate_at);
 
 		post result = dao.PostDao.insertPost(s);
-
+		String view = "/sotuken-project/MainServlet";
+		response.sendRedirect(view);
 
 	}
 
