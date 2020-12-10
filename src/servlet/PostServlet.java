@@ -18,6 +18,10 @@ import Bean.post;
 @WebServlet("/PostServlet")
 public class PostServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	public static String getname;
+	public static String getid;
+	public static String getpass;
+	public static String valueString="post";
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -60,9 +64,6 @@ public class PostServlet extends HttpServlet {
 		System.out.println(PostContents+PostImg+PostTags_Id+PostAccount_Id+PostAddress+PostCreate_at);
 
 		post result = dao.PostDao.insertPost(s);
-		String view = "/sotuken-project/MainServlet";
-		response.sendRedirect(view);
-
 	}
 
 

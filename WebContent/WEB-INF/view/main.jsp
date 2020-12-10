@@ -53,11 +53,11 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form action="/sotuken-project/PostServlet" enctype="multipart/form-data" method="POST" >
+					<form id="postform" enctype="multipart/form-data" method="POST">
 						<div class="form-group">
 							<label for="exampleInputEmail1">投稿文</label>
 							<input type="text"class="form-control" id = "testname" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
-							<input type="hidden"name="accountid"value=<%=request.getAttribute("getId")%>>
+							<input type="hidden"name="accountid" value=<%=request.getAttribute("getId")%>>
 							<!-- <div id="upFileWrap">
 	    						<div id="inputFile">
 
@@ -65,12 +65,13 @@
 
 
 	        						<div id="inputFileWrap">
-	            						<input type="file" name="uploadFile" id="uploadFile">
+	            						 
 	            						<div id="btnInputFile"><span>ファイルを選択する</span></div>
 	           							<div id="btnChangeFile"><span>ファイルを変更する</span></div>
 	       							</div>
 	   							 </div>
 							</div> -->
+							<input type="file" name="uploadFile" id="uploadFile">
 								<div class="form-group col-md-4">
 					 				<select id="inputState"
 										class="form-control" name="PostTags">
@@ -82,8 +83,8 @@
 									</select>
 								</div>
 								<small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
-								<input type="submit" id = "ajaxTest" class="btn btn-primary" value="投稿">
-							</div>
+							<button type="button" class="btn btn-primary" id="submit">投稿</button>
+						</div>
 							<!-- <div class="form-group form-check">
 								<input type="checkbox" class="form-check-input" id="exampleCheck1">
 								<label class="form-check-label" for="exampleCheck1">プライバシーポリシーに同意</label>
@@ -101,7 +102,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+
 	</div>
 	<!-- 投稿モーダルここまで -->
 	<!-- hedear開始 -->
@@ -244,19 +245,35 @@
 		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
 		crossorigin="anonymous"></script>
 	<script>
-		$('#ajaxTest').on('click', function(){
-		  $.ajax({
-		    url : 'PostServlet',
-		    type : 'POST',
-		    data : {data1 : 'あいうえお'},
-		    success : function(response) {
-		      alert(response);
-		    },
-		    error : function() {
-		      console.log('通信エラーです');
-		    }
-		  })
-		})
+	$('#submit').on('click', function() {
+		// フォームをシリアライズ化してパラメータにつめる
+		var params = $('form').serialize() + "&btn=regist";
+
+		// 確認ダイアログ
+		if (confirm('登録します。よろしいですか。')) {
+			$.ajax({
+				type     : 'POST',
+				url      : 'PostServlet', // PostServlet.javaのServiceメソッドが呼ばれる
+				data     : params,
+				dataType : 'json', // レスポンスをJSONとしてパースする
+			}).done( function(json) {
+				if (json.result == "success") { // 正常完了時の処理
+
+					alert('登録成功');
+
+				} else if (json.result == "fail") { // Exception発生時の処理
+
+					alert('登録失敗');
+
+				}
+			}).fail( function(jqXHR, textStatus, errorThrown) { // サーバ由来のエラー（404とか）
+
+				alert('通信失敗');
+
+			});
+		}
+	});
+
 	</script>
 
 	<!--ここまで-->

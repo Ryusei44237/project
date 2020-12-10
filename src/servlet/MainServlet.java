@@ -56,11 +56,13 @@ public class MainServlet extends HttpServlet {
 		String getname=AccountDao.getname;
 		String getid=AccountDao.getid;
 		String getpass=AccountDao.getpassword;
+
 		//ここまで
-		System.out.println("データベースから　取得したユーザ名：　"+getname+"  取得したパスワード：　"+getpass);
+		System.out.println("データベースから　取得したユーザ名：　"+getname+"  取得したパスワード：　"+getpass+" 取得したID"+getid);
 		//login.jspに入力された名前とパスワードがデータベースから取り出したデータ（名前とパスワード）と完全一致していれば次のページへ遷移する
 		if (name.equals(getname)&&pass.equals(getpass)) {
 			request.setAttribute("getname",getname );
+			request.setAttribute("getId", getid);
 			//ページ遷移
 			System.out.println("ユーザ名とパスワードが一致しました。");
 			String view = "/WEB-INF/view/main.jsp";
@@ -75,8 +77,9 @@ public class MainServlet extends HttpServlet {
 			String view = "/WEB-INF/view/login.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
-		}else {
+		}else{
 			//6回以上間違えた場合はパスワードを再登録するための画面へ遷移させる
+
 		}
 	}
 
