@@ -18,7 +18,7 @@ public class AccountDao {
 	//ユーザ
 	private static final String user = "root";
 	//パスワード
-	private static final String pw = "Sql39sia";
+	private static final String pw = "44237";
 	public static String getname = null;
 	public static String getid=null;
 	public static String getmail=null;
@@ -29,8 +29,7 @@ public class AccountDao {
 	public static String getupdate_at=null;
 
 
-	//INSERT文を実行するメソッドのサンプル
-	//引数は登録したい情報が格納されたBean
+//アカウント登録
 	public static account inserAccount(account s){
 		//②アクセスに必要な変数の初期化
 		Connection con = null;
@@ -57,7 +56,7 @@ public class AccountDao {
 			//⑦プレースホルダに値を設定
 			//第1引数→何番目の?に設定するか(1から数える)
 			//第2引数→?に設定する値
-			pstmt.setString(1, null);
+			pstmt.setString(1, s.getId());
 			pstmt.setString(2, s.getName());
 			pstmt.setString(3, s.getMail());
 			pstmt.setString(4, s.getPassword());
@@ -102,7 +101,7 @@ public class AccountDao {
 		}
 		return s;
 	}
-	//ログインに使うdao
+	//ログイン
 		public static account searchDao(String name){
 			Connection con = null;
 			PreparedStatement pstmt = null;
@@ -116,7 +115,7 @@ public class AccountDao {
 				// ③DBMSとの接続を確立する
 				con = DriverManager.getConnection(url,user,pw);
 				// ④SQL文を作成する
-				String sql = "SELECT name,password,COUNT(name = ? or null) as count FROM account where name=?";
+				String sql = "SELECT id,name,password,COUNT(name = ? or null) as count FROM account where name=?";
 				// ⑤SQL文を実行するための準備を行う
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, name);
@@ -131,6 +130,7 @@ public class AccountDao {
 					String countdata=rs.getString("count");
 					getname=rs.getString("name");
 					getpassword=rs.getString("password");
+					getid=rs.getString("id");
 					result = new account(countdata);
 				}
 			} catch (ClassNotFoundException e) {

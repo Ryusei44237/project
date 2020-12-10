@@ -16,7 +16,7 @@ public class PostDao {
 		//ユーザ
 		private static final String user = "root";
 		//パスワード
-		private static final String pw = "Sql39sia";
+		private static final String pw = "44237";
 
 		public static String getname = null;
 		public static String getid=null;
@@ -48,15 +48,7 @@ public class PostDao {
 
 				//Stringmigi⇒int
 
-				int Tags_Id = 0;
-				String judg = s.getTags_Id();
-
-				if( judg.equals("地震")) {
-
-					Tags_Id = 1;
-
-				}
-
+				int Tags_Id = Integer.parseInt(s.getTags_Id());
 				int Account_Id = Integer.parseInt(s.getAccount_Id());
 
 				//⑤SQL文の元を作成する
