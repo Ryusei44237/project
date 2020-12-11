@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/timeline.css">
         <title>Registration</title>
-    </head>
+	</head>
+	
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="#">
@@ -22,15 +23,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">ログイン<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="login.jsp">ログイン<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">マイページ</a>
         </li>
         <li class="nav-item">
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">登録</a>
-        </li>
+        
       </ul>
     </div>
     </nav>
