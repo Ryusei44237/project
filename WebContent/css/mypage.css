@@ -9,7 +9,7 @@ body{
 	height: 140px;
 	z-index: 2;
   }
-  
+
   .modal.fade.bd-example-modal-sm{
 	z-index:9998;
   }
@@ -20,7 +20,7 @@ body{
 	border-bottom:none;
   }
   .nav-tabs .nav-link.active {
-	background-color:#e2e2e2;
+  	color:#ffffff;
 	border-bottom:#e2e2e2;
 	font-weight: bold;
   }
@@ -132,22 +132,23 @@ body{
   .acount-form{
 	  width: 600px;
   }
-  
+
   form.needs-validation{
-    border-color: slategray;
+  	border:1px solid;
+    border-color:#dee2e6;
     background-color: #FFFFFF;
     text-align: center;
     position:relative;
     display: block;
-    top: 50%; 
-    left: 50%; 
+    top: 50%;
+    left: 50%;
     transform: translate(-50%,0%);
     max-width: 900px;
     max-height: 700px;
     margin-top: 20px;
   }
-  
+
   div.form-row{
   	margin-left:120px;
-  	
+
   }

@@ -65,7 +65,7 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("getId", getid);
 			//ページ遷移
 			System.out.println("ユーザ名とパスワードが一致しました。");
-			String view = "/WEB-INF/view/main.jsp";
+			String view = "/WEB-INF/view/hinagata.jsp";
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request, response);
 		}else if (count<6) {
