@@ -19,11 +19,18 @@ body{
   .nav-tabs {
 	border-bottom:none;
   }
+  .blue{
+  color: #fff!important;
+  background-color: #5ea5ff!important;
+  border-bottom: #e2e2e2!important;
+    font-weight: bold!important;
+}
   .nav-tabs .nav-link.active {
-  	color:#ffffff;
-	border-bottom:#e2e2e2;
-	font-weight: bold;
-  }
+    color: #ffffff;
+    background-color: #5ea5ff;
+    border-bottom: #e2e2e2;
+    font-weight: bold;
+}
     .tab-pane.active .tab-pane-header {
 	padding:2rem;
 	background-color:#e2e2e2;
