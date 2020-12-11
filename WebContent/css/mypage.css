@@ -21,7 +21,6 @@ body{
   }
   .nav-tabs .nav-link.active {
   	color:#ffffff;
-	background-color:#00bfff;
 	border-bottom:#e2e2e2;
 	font-weight: bold;
   }
@@ -135,7 +134,8 @@ body{
   }
 
   form.needs-validation{
-    border-color: slategray;
+  	border:1px solid;
+    border-color:#dee2e6;
     background-color: #FFFFFF;
     text-align: center;
     position:relative;

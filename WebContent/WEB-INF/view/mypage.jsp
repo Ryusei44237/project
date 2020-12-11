@@ -346,7 +346,7 @@
 			<div class="tab-pane fade show active" id="home" role="tabpanel"
 				aria-labelledby="home-tab">
 				<table class="table">
-					<tbody>
+					<tbody style="background-color:#f0f8ff;">
 						<tr>
 							<th scope="row" style="width: 100px;">1</th>
 							<td><img src="../image/沖縄海.jpg" alt="ユーザのトップ画像"
@@ -377,7 +377,7 @@
 			</div>
 			<div class="tab-pane fade" id="profile" role="tabpanel"
 				aria-labelledby="profile-tab">
-				<div class="insta">
+				<div class="insta" style="background-color:#f0f8ff;">
 					<div>
 						<a> <img src="../image/空.jpg" class="img-circle"> <span
 							class="fa-stack fa-lg"> <i
@@ -438,7 +438,7 @@
 				aria-labelledby="contact-tab">
 				<!--ここにその他-->
 <!-- アカウント情報変更タブ -->
-<form class="needs-validation" novalidate action="/sotuken-project/UpdateServlet" method="get">
+<form class="needs-validation" novalidate action="/sotuken-project/UpdateServlet" method="get" style="background-color:#f0f8ff;">
 <div class="form-row">
 <div class="col-md-5 mb-3">
 <label for="validationCustom01">ユーザID</label>
