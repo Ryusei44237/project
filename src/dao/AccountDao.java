@@ -102,7 +102,7 @@ public class AccountDao {
 		return s;
 	}
 	//ログイン
-		public static account searchDao(String name){
+		public static account searchDao(String name,String pass){
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
@@ -115,11 +115,12 @@ public class AccountDao {
 				// ③DBMSとの接続を確立する
 				con = DriverManager.getConnection(url,user,pw);
 				// ④SQL文を作成する
-				String sql = "SELECT id,name,password,COUNT(name = ? or null) as count FROM account where name=?";
+				String sql = "SELECT id,name,password,COUNT(name = ? or null) as count FROM account where name=? or password=?";
 				// ⑤SQL文を実行するための準備を行う
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, name);
 				pstmt.setString(2,name);
+				pstmt.setString(3, pass);
 
 
 				// ⑥SQL文を実行してDBMSから結果を受信する
