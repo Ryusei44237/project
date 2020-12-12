@@ -55,6 +55,7 @@
 			</div>
 			<p id="misstext">　</p>
 			<div class="button-panel">
+			<input type="hidden" name="judge" value="log">
 				<input type="submit" class="button" title="Sign In" value="サインイン"></input>
 			</div>
 		</form>

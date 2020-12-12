@@ -18,14 +18,14 @@ public class PostDao {
 		//パスワード
 		private static final String pw = "44237";
 
-		public static String getname = null;
-		public static String getid=null;
-		public static String getmail=null;
-		public static String getpassword=null;
-		public static String getbirthday=null;
-		public static String gettell=null;
-		public static String getcreate_at=null;
-		public static String getupdate_at=null;
+//		public static String getname = null;
+//		public static String getid=null;
+//		public static String getmail=null;
+//		public static String getpassword=null;
+//		public static String getbirthday=null;
+//		public static String gettell=null;
+//		public static String getcreate_at=null;
+//		public static String getupdate_at=null;
 
 
 		//INSERT文を実行するメソッドのサンプル
@@ -46,10 +46,10 @@ public class PostDao {
 				con = DriverManager.getConnection(url, user, pw);
 
 
-				//Stringmigi⇒int
+				//String migi⇒int......ここわざわざ数値に直す必要あるかな？？
 
-				int Tags_Id = Integer.parseInt(s.getTags_Id());
-				int Account_Id = Integer.parseInt(s.getAccount_Id());
+//				int Tags_Id = Integer.parseInt(s.getTags_Id());
+//				int Account_Id = Integer.parseInt(s.getAccount_Id());
 
 				//⑤SQL文の元を作成する
 				//?をプレースホルダと言います。
@@ -65,8 +65,8 @@ public class PostDao {
 
 				pstmt.setString(1, s.getContents());
 				pstmt.setString(2, s.getImg());
-				pstmt.setInt(3, Tags_Id);
-				pstmt.setInt(4, Account_Id);
+				pstmt.setString(3, s.getTags_Id());
+				pstmt.setString(4, s.getAccount_Id());
 				pstmt.setString(5, s.getAddress());
 				pstmt.setString(6, s.getCreate_At());
 

@@ -83,6 +83,7 @@
 									</select>
 								</div>
 								<small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
+								<input type="hidden" name="value" value="post">
 							<button type="button" class="btn btn-primary" id="submit">投稿</button>
 						</div>
 							<!-- <div class="form-group form-check">

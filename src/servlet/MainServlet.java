@@ -18,6 +18,8 @@ import dao.AccountDao;
 @WebServlet("/MainServlet")
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static String View;
+	private static Bean.post s;
 
     /**
      * @see HttpServlet#HttpServlet()
@@ -39,47 +41,46 @@ public class MainServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		request.setCharacterEncoding("UTF-8");
-		int count=0;
-		//
-		/*login.jspで入力された値をloginDaoを使用し一致しているか調べる*/
+		String value = request.getParameter("value");
+		//ログイン時に受け取る情報
 		String name=request.getParameter("name");
 		String pass=request.getParameter("password");
+		login(name,pass);
+		request.setAttribute("getname",AccountDao.getname);
+		request.setAttribute("accountid", AccountDao.getid);
+		//投稿時に受け取る情報
+//		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//		String time = sdf.format(timestamp);
+//		String PostContents = request.getParameter("PostContents");
+//		String PostImg = request.getParameter("uploadFile");
+//		String PostTags_Id = request.getParameter("PostTags");
+//		String PostAccount_Id = request.getParameter("accountid");
+//		String PostAddress = "null";
+//		String PostCreate_at = time;
+//		System.out.println(PostContents+PostImg+PostTags_Id+PostAccount_Id+PostAddress+PostCreate_at);
+//		s = new post(PostContents, PostImg, PostTags_Id, PostAccount_Id, PostAddress, PostCreate_at);
+//		post(s);
 
-		/*CLIでデータ内容確認用コード*/
-		System.out.println("ログインフォームで　取得したユーザ名："+name+"  取得したパスワード："+pass);
-		/*ここまで*/
+		RequestDispatcher dispatcher = request.getRequestDispatcher(View);
+		dispatcher.forward(request, response);
 
-		//データベースから値を取得
+
+	}
+	public static void login(String name,String pass) {
 		account result = AccountDao.searchDao(name);
-		//AcountDaoからgetNameという変数を引っ張ってきてメイン画面のタイトルにアカウント名を表示させる
-		String getname=AccountDao.getname;
-		String getid=AccountDao.getid;
-		String getpass=AccountDao.getpassword;
-
-		//ここまで
-		System.out.println("データベースから　取得したユーザ名：　"+getname+"  取得したパスワード：　"+getpass+" 取得したID"+getid);
-		//login.jspに入力された名前とパスワードがデータベースから取り出したデータ（名前とパスワード）と完全一致していれば次のページへ遷移する
-		if (name.equals(getname)&&pass.equals(getpass)) {
-			request.setAttribute("getname",getname );
-			request.setAttribute("getId", getid);
-			//ページ遷移
+		//パスワードと名前が一致した場合
+		if (name.equals(AccountDao.getname)&&pass.equals(AccountDao.getpassword)) {
+			View = "/WEB-INF/view/hinagata.jsp";
+			System.out.println("ログインフォームで　取得したユーザ名："+name+"  取得したパスワード："+pass);
 			System.out.println("ユーザ名とパスワードが一致しました。");
-			String view = "/WEB-INF/view/hinagata.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			dispatcher.forward(request, response);
-		}else if (count<6) {
-			//変数judgementにfalseを格納し、jspに引き渡す。jspではこの値を使用し、失敗したときにアラート（のような物）を出させる。
-			String Judgement= "false";
-			request.setAttribute("judgement",Judgement );
+			System.out.println("データベースから　取得したユーザ名：　"+AccountDao.getname+"  取得したパスワード：　"+AccountDao.getpassword+" 取得したID"+AccountDao.getid);
+		}else {
+			//パスワードと名前が一致しなかった場合
 			System.out.println("ユーザ名とパスワードが一致しませんでした。");
-			//ページ遷移
-			String view = "/WEB-INF/view/login.jsp";
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			dispatcher.forward(request, response);
-		}else{
-			//6回以上間違えた場合はパスワードを再登録するための画面へ遷移させる
-
+			View = "/WEB-INF/view/login.jsp";
 		}
 	}
 

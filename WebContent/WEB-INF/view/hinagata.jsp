@@ -27,11 +27,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="postform">
+                <form id="postform" action="/sotuken-project/PostServlet" method="post">
                     <class class="form-group">
                         <label for="exampleInputEmail1">投稿文</label>
                         <input type="text"class="form-control" id = "testname" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
-                        <input type="hidden"name="accountid" value=<%=request.getAttribute("getId")%>>
+                        <input type="hidden"name="accountid" value=<%=request.getAttribute("accountid")%>>
                         <input type="file" name="uploadFile" id="uploadFile">
                     </class>
                             <div class="form-group col-md-4">
@@ -44,8 +44,8 @@
                                     <option value="4">洪水</option>
                                 </select>
                             </div>
-                            <small id="emailHelp"class="form-text text-muted">誹謗中傷、荒らし行為禁止</small>
-                        <button type="button" class="btn btn-primary" id="submit">投稿</button>
+                            <input type="hidden" name="value" value="post">
+                        <button type="submit" class="btn btn-primary" id="submit">投稿</button>
                     </div>
                     </form>
             </div>
