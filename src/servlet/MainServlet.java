@@ -19,7 +19,7 @@ import dao.AccountDao;
 public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static String View;
-	private static int count=6;
+	private static int count=0;
 	private static String name;
 	private static String pass;
 

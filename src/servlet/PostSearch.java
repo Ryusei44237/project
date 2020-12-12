@@ -28,8 +28,9 @@ public class PostSearch extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String SearchText=request.getParameter("SearchText");
+		String SearchText=request.getParameter("Search");
 		System.out.println(SearchText);
+		
 	}
 
 	/**
