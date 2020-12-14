@@ -36,6 +36,8 @@ public class post {
 		this.create_at = create_at;
 
 	}
+
+
 	public post(String contents, String img, String tags_id, String address, String create_at ) {
 
 		this.contents = contents;
@@ -47,6 +49,12 @@ public class post {
 	}
 
 
+	public post(String contents, String tags_id ) {
+
+		this.contents = contents;
+		this.tags_id = tags_id;
+
+	}
 
 	public void setId(String id) {
 
