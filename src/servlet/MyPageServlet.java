@@ -17,7 +17,7 @@ import dao.PostDao;
 /**
  * Servlet implementation class Update
  */
-@WebServlet("/UpdateServlet")
+@WebServlet("/MyPageServlet")
 public class MyPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 //	このservlet上で使用する変数
@@ -43,10 +43,13 @@ public class MyPageServlet extends HttpServlet {
 		request.setAttribute("tell",AccountDao.gettell);
 		request.setAttribute("update_at",AccountDao.getupdate_at);
 
-		/*ここにmypage.jspへの遷移コードを書く｛mypage.jsp｝*/
-		String view = "/WEB-INF/view/mypage.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		dispatcher.forward(request, response);
+		if (true) {
+			/*ここにmypage.jspへの遷移コードを書く｛mypage.jsp｝*/
+			String view = "/WEB-INF/view/mypage.jsp";
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			dispatcher.forward(request, response);
+		}
+
 	}
 
 	/**
