@@ -17,7 +17,7 @@ public class PostDao {
 		//ユーザ
 		private static final String user = "root";
 		//パスワード
-		private static final String pw = "44237";
+		private static final String pw = "Sql39sia";
 
 //		public static String getname = null;
 //		public static String getid=null;
@@ -121,7 +121,7 @@ public class PostDao {
 				// ③DBMSとの接続を確立する
 				con = DriverManager.getConnection(url,user,pw);
 				// ④SQL文を作成する
-				String sql = "SELECT * FROM post WHERE contents = ?;";
+				String sql = "SELECT * FROM post WHERE acount_id = ?;";
 				// ⑤SQL文を実行するための準備を行う
 				pstmt = con.prepareStatement(sql);
 				pstmt.setString(1, SearchText);
