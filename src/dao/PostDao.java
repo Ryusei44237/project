@@ -170,6 +170,5 @@ public class PostDao {
 			}
 			return result;
 		}
-
-
+//		検索要素（account_id）　全件検索
 }

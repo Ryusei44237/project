@@ -66,7 +66,7 @@
                 <div id="form_group">
                     <form action="/sotuken-project/tourokuServlet" method="get"><button type="submit" class="clear-decoration">登録</button></form>
                     <form action="/sotuken-project/TestServlet" method="get"><button type="submit" class="clear-decoration">ログイン</button></form>
-                    <form action="/sotuken-project/UpdateServlet" method="get"><button type="submit" class="clear-decoration" name="name" value=<%=request.getAttribute("getname") %>>マイページ</button></form>
+                    <form action="/sotuken-project/MyPageServlet" method="get"><input type="hidden" name="account_id" value=<%=request.getAttribute("accountid")%>><button type="submit" class="clear-decoration" name="name" value=<%=request.getAttribute("getname") %>>マイページ</button></form>
                 </div>
             </div>
             <!-- タイトル -->
