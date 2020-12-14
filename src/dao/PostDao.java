@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Bean.post;
@@ -27,7 +28,8 @@ public class PostDao {
 //		public static String getcreate_at=null;
 //		public static String getupdate_at=null;
 
-
+		public static String contents;
+		public static String tags;
 		//INSERT文を実行するメソッドのサンプル
 		//引数は登録したい情報が格納されたBean
 		public static post insertPost(post s){
@@ -105,6 +107,68 @@ public class PostDao {
 				}
 			}
 			return s;
+		}
+		public static post searchPost(String SearchText){
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			post result = null;
+
+			try {
+				// ②JDBCドライバをロードする
+				Class.forName("com.mysql.cj.jdbc.Driver");
+
+				// ③DBMSとの接続を確立する
+				con = DriverManager.getConnection(url,user,pw);
+				// ④SQL文を作成する
+				String sql = "SELECT * FROM post WHERE contents = ?;";
+				// ⑤SQL文を実行するための準備を行う
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, SearchText);
+
+				// ⑥SQL文を実行してDBMSから結果を受信する
+				rs = pstmt.executeQuery();
+
+				// ⑦実行結果を含んだインスタンスからデータを取り出す
+				rs.next();
+
+				contents = rs.getString("contents");
+				tags = rs.getString("tags_id");
+
+				result = new post(contents,tags);
+			} catch (ClassNotFoundException e) {
+				System.out.println("JDBCドライバが見つかりません。");
+				e.printStackTrace();
+			} catch (SQLException e) {
+				System.out.println("DBアクセス時にエラーが発生しました。");
+			} finally {
+				// ⑧DBMSから切断する
+				try {
+					if (rs != null) {
+						rs.close();
+					}
+				} catch (SQLException e) {
+					System.out.println("DBアクセス時にエラーが発生しました。");
+					e.printStackTrace();
+				}
+				try {
+					if (pstmt != null) {
+						pstmt.close();
+					}
+				} catch (SQLException e) {
+					System.out.println("DBアクセス時にエラーが発生しました。");
+					e.printStackTrace();
+				}
+				try {
+					if (con != null) {
+						con.close();
+					}
+				} catch (SQLException e) {
+					System.out.println("DBアクセス時にエラーが発生しました。");
+					e.printStackTrace();
+				}
+			}
+			return result;
 		}
 
 

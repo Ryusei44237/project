@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Bean.post;
+import dao.PostDao;
+
 /**
  * Servlet implementation class PostSearch
  */
@@ -30,6 +33,8 @@ public class PostSearch extends HttpServlet {
 		// TODO Auto-generated method stub
 		String SearchText=request.getParameter("Search");
 		System.out.println(SearchText);
+		post result = PostDao.searchPost(SearchText);
+		System.out.println(PostDao.contents+"検索結果");
 		
 	}
 
