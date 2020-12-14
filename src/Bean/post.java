@@ -36,10 +36,16 @@ public class post {
 		this.create_at = create_at;
 
 	}
-	public post(String contents,String tags_id) {
+	public post(String contents, String img, String tags_id, String address, String create_at ) {
+
 		this.contents = contents;
+		this.img = img;
 		this.tags_id = tags_id;
+		this.address = address;
+		this.create_at = create_at;
+
 	}
+
 
 
 	public void setId(String id) {

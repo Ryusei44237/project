@@ -21,7 +21,11 @@ public class PostDao {
 
 
 		public static String contents;
+		public static String img;
 		public static String tags;
+		public static String address;
+		public static String create_at;
+
 		//INSERT文を実行するメソッドのサンプル
 		//引数は登録したい情報が格納されたBean
 		public static post insertPost(post s){
@@ -188,9 +192,12 @@ public class PostDao {
 				rs.next();
 
 				contents = rs.getString("contents");
+				img = rs.getString("img");
 				tags = rs.getString("tag_id");
+				address = rs.getString("address");
+				create_at = rs.getString("create_at");
 
-				result = new post(contents,tags);
+				result = new post(contents, img, tags, address, create_at);
 				System.out.println("DAOで取得した値の一覧：");
 			} catch (ClassNotFoundException e) {
 				System.out.println("JDBCドライバが見つかりません。");
