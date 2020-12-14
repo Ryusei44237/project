@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import Bean.post;
 
@@ -167,11 +169,14 @@ public class PostDao {
 			return result;
 		}
 //		検索要素（account_id）　全件検索
-		public static post allpost(String id){
+		public List<post>  allpost(String id){
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			post result = null;
+
+
+			List<post> results = new ArrayList<post>();
 
 			try {
 				// ②JDBCドライバをロードする
@@ -196,6 +201,17 @@ public class PostDao {
 				tags = rs.getString("tag_id");
 				address = rs.getString("address");
 				create_at = rs.getString("create_at");
+				
+				while (rs.next()) {
+			        // 1件ずつCountryオブジェクトを生成して結果を詰める
+			        post list = new post();
+			        post.setContents(rs.getString("contents"));
+			        post.setName(rs.getString("name"));
+			        post.setContent(rs.getString("content"));
+
+			        // リストに追加
+			        results.add(Board);
+			      }
 
 				result = new post(contents, img, tags, address, create_at);
 				System.out.println("DAOで取得した値の一覧：");
