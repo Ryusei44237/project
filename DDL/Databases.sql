@@ -54,10 +54,19 @@ CREATE TABLE post_tags(
 );
 
 
+CREATE TABLE follows(
+
+    id int(255) AUTO_INCREMENT,
+    account_id int(255),
+    follow int(255),
+    PRIMARY KEY(id)
+
+);
+
 
 /**テスト**/
 INSERT INTO account VALUE(1,'test','test@morijyobi.ac.jp','testaccount','2020-01-01','08012345678','','2020-08-08','2020-09-09'),
-(2,'test2','test@morijyobi.ac.jp','testaccount','2020-01-01','08012345678','','2020-08-08','2020-09-09');  
+(2,'test2','test@morijyobi.ac.jp','testaccount','2020-01-01','08012345678','','2020-08-08','2020-09-09');
 INSERT INTO account(name, mail, password, birthday, tell, token, create_at, update_at) VALUE('test','test@morijyobi.ac.jp','testaccount','2020-01-01','08012345678','','2020-08-08','2020-09-09');
 /**テストアカウント**/
 

@@ -10,46 +10,38 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Bean.account;
+import Bean.post;
 import dao.AccountDao;
+import dao.PostDao;
 
 /**
  * Servlet implementation class Update
  */
 @WebServlet("/UpdateServlet")
-public class UpdateServlet extends HttpServlet {
+public class MyPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+//	このservlet上で使用する変数
+	private static String id;
 
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public UpdateServlet() {
+    public MyPageServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//メインjspからアカウントIDを取得し、アカウントIDをもとに行検索をかける。
-		String name=request.getParameter("name");
-		System.out.println("main.jspから　取得した名前　"+name+"を使用しアカウント更新をする");
-		account result = AccountDao.searchDao2(name);
-		String getid=AccountDao.getid;
-		String getname=AccountDao.getname;
-		String getpass=AccountDao.getpassword;
-		String getmail=AccountDao.getmail;
-		String getbirthday=AccountDao.getbirthday;
-		String gettell=AccountDao.gettell;
-		String getupdate_at=AccountDao.getupdate_at;
-		System.out.println(getid+"|"+getname+"|"+getpass+"|"+getmail+"|"+getbirthday+"|"+gettell+"|"+getupdate_at);
-		request.setAttribute("id",getid);
-		request.setAttribute("name",getname);
-		request.setAttribute("pass",getpass);
-		request.setAttribute("mail",getmail);
-		request.setAttribute("birthday",getbirthday);
-		request.setAttribute("tell",gettell);
-		request.setAttribute("update_at",getupdate_at);
+		id=request.getParameter("account_id");
+//		投稿内容表示処理 (アカウントIDを取得し、アカウントIDが一致する投稿を全件取得する）
+		post(id);
+//		登録情報更新処理 （アカウントIDで照会し、一致するアカウント登録情報を取得）
+		account(id);
+		System.out.println("main.jspから　取得した名前　"+AccountDao.getname);
+		request.setAttribute("id",AccountDao.getid);
+		request.setAttribute("name",AccountDao.getname);
+		request.setAttribute("pass",AccountDao.getpassword);
+		request.setAttribute("mail",AccountDao.getmail);
+		request.setAttribute("birthday",AccountDao.getbirthday);
+		request.setAttribute("tell",AccountDao.gettell);
+		request.setAttribute("update_at",AccountDao.getupdate_at);
 
 		/*ここにmypage.jspへの遷移コードを書く｛mypage.jsp｝*/
 		String view = "/WEB-INF/view/mypage.jsp";
@@ -63,6 +55,13 @@ public class UpdateServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+	public static void account(String id) {
+		account result = AccountDao.searchDao2(id);
+	}
+	public static void post(String id) {
+		post result = PostDao.allpost(id);
+
 	}
 
 }
