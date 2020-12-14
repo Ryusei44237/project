@@ -19,14 +19,6 @@ public class PostDao {
 		//パスワード
 		private static final String pw = "44237";
 
-//		public static String getname = null;
-//		public static String getid=null;
-//		public static String getmail=null;
-//		public static String getpassword=null;
-//		public static String getbirthday=null;
-//		public static String gettell=null;
-//		public static String getcreate_at=null;
-//		public static String getupdate_at=null;
 
 		public static String contents;
 		public static String tags;
@@ -171,4 +163,67 @@ public class PostDao {
 			return result;
 		}
 //		検索要素（account_id）　全件検索
+		public static post allpost(String id){
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			post result = null;
+
+			try {
+				// ②JDBCドライバをロードする
+				Class.forName("com.mysql.cj.jdbc.Driver");
+
+				// ③DBMSとの接続を確立する
+				con = DriverManager.getConnection(url,user,pw);
+				// ④SQL文を作成する
+				String sql = "SELECT * FROM post WHERE account_id = ?;";
+				// ⑤SQL文を実行するための準備を行う
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, id);
+
+				// ⑥SQL文を実行してDBMSから結果を受信する
+				rs = pstmt.executeQuery();
+
+				// ⑦実行結果を含んだインスタンスからデータを取り出す
+				rs.next();
+
+				contents = rs.getString("contents");
+				tags = rs.getString("tag_id");
+
+				result = new post(contents,tags);
+				System.out.println("DAOで取得した値の一覧：");
+			} catch (ClassNotFoundException e) {
+				System.out.println("JDBCドライバが見つかりません。");
+				e.printStackTrace();
+			} catch (SQLException e) {
+				System.out.println("DBアクセス時にエラーが発生しました。");
+			} finally {
+				// ⑧DBMSから切断する
+				try {
+					if (rs != null) {
+						rs.close();
+					}
+				} catch (SQLException e) {
+					System.out.println("DBアクセス時にエラーが発生しました。");
+					e.printStackTrace();
+				}
+				try {
+					if (pstmt != null) {
+						pstmt.close();
+					}
+				} catch (SQLException e) {
+					System.out.println("DBアクセス時にエラーが発生しました。");
+					e.printStackTrace();
+				}
+				try {
+					if (con != null) {
+						con.close();
+					}
+				} catch (SQLException e) {
+					System.out.println("DBアクセス時にエラーが発生しました。");
+					e.printStackTrace();
+				}
+			}
+			return result;
+		}
 }

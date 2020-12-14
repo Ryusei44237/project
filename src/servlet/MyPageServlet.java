@@ -60,7 +60,7 @@ public class MyPageServlet extends HttpServlet {
 		account result = AccountDao.searchDao2(id);
 	}
 	public static void post(String id) {
-		post result = PostDao.searchPost(id);
+		post result = PostDao.allpost(id);
 
 	}
 
