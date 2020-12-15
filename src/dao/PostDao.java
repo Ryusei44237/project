@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import Bean.post;
 
@@ -19,7 +18,7 @@ public class PostDao {
 		//ユーザ
 		private static final String user = "root";
 		//パスワード
-		private static final String pw = "Sql39sia";
+		private static final String pw = "44237";
 
 
 		public static String contents;
@@ -27,7 +26,6 @@ public class PostDao {
 		public static String tags;
 		public static String address;
 		public static String create_at;
-
 		//INSERT文を実行するメソッドのサンプル
 		//引数は登録したい情報が格納されたBean
 		public static post insertPost(post s){
@@ -168,85 +166,84 @@ public class PostDao {
 			}
 			return result;
 		}
-//		検索要素（account_id）　全件検索
-		public List<post>  allpost(String id){
+
+		//全件検索するSELECT文を実行するメソッドのサンプル
+		public static ArrayList<post> allPost(){
+			//アクセスに必要な変数の初期化
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
-			post result = null;
 
 
-			List<post> results = new ArrayList<post>();
-
-			try {
-				// ②JDBCドライバをロードする
+			try{
+				//JDBCドライバをロードする
 				Class.forName("com.mysql.cj.jdbc.Driver");
 
-				// ③DBMSとの接続を確立する
-				con = DriverManager.getConnection(url,user,pw);
-				// ④SQL文を作成する
-				String sql = "SELECT * FROM post WHERE account_id = ?;";
-				// ⑤SQL文を実行するための準備を行う
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, id);
+				//データベースと接続する(コネクションを取ってくる)
+				//第1引数→接続先URL
+				//第2引数→ユーザ名
+				//第3引数→パスワード
+				con = DriverManager.getConnection(url, user, pw);
 
-				// ⑥SQL文を実行してDBMSから結果を受信する
+				//SQL文の元を作成する
+				String sql = "SELECT * FROM post;";
+
+				//SQLを実行するための準備(構文解析)
+				pstmt = con.prepareStatement(sql);
+
+				//SQLを実行し、DBから結果を受領する
 				rs = pstmt.executeQuery();
 
-				// ⑦実行結果を含んだインスタンスからデータを取り出す
-				rs.next();
+				//return用のArrayList生成
+				ArrayList<post> list = new ArrayList<post>();
 
-				contents = rs.getString("contents");
-				img = rs.getString("img");
-				tags = rs.getString("tag_id");
-				address = rs.getString("address");
-				create_at = rs.getString("create_at");
 
-				while (rs.next()) {
-			        // 1件ずつCountryオブジェクトを生成して結果を詰める
-			        post list = new post();
-			        post.setContents(rs.getString("contents"));
-			        post.setName(rs.getString("name"));
-			        post.setContent(rs.getString("content"));
+				//next()の戻り値がfalseになるまでResultSetから
+				//データを取得してArrayListに追加していく
+				while( rs.next() ){
+					contents = rs.getString("contents");
+					img = rs.getString("img");
+					tags = rs.getString("tags_id");
+					address = rs.getString("address");
+					create_at = rs.getString("create_at");
+					post result = new post(contents,img,tags,address,create_at);
+					list.add(result);
 
-			        // リストに追加
-			        results.add(Board);
-			      }
-
-				result = new post(contents, img, tags, address, create_at);
-				System.out.println("DAOで取得した値の一覧：");
-			} catch (ClassNotFoundException e) {
-				System.out.println("JDBCドライバが見つかりません。");
-				e.printStackTrace();
-			} catch (SQLException e) {
-				System.out.println("DBアクセス時にエラーが発生しました。");
-			} finally {
-				// ⑧DBMSから切断する
-				try {
-					if (rs != null) {
-						rs.close();
-					}
-				} catch (SQLException e) {
-					System.out.println("DBアクセス時にエラーが発生しました。");
-					e.printStackTrace();
 				}
+				//中身の詰まったArrayListを返却する
+				System.out.println(list);
+				return list;
+
+			}  catch (SQLException e){
+				System.out.println("DBアクセスに失敗しました。");
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				System.out.println("DBアクセスに失敗しました。");
+				e.printStackTrace();
+			} finally {
+				//⑫DBとの切断処理
 				try {
-					if (pstmt != null) {
+					//nullかチェックしないとNullPointerExceptionが
+					//発生してしまうためチェックしている。
+					if( pstmt != null){
 						pstmt.close();
 					}
-				} catch (SQLException e) {
-					System.out.println("DBアクセス時にエラーが発生しました。");
+				} catch(SQLException e){
+					System.out.println("DB切断時にエラーが発生しました。");
 					e.printStackTrace();
 				}
+
 				try {
-					if (con != null) {
+					if( con != null){
 						con.close();
 					}
-				} catch (SQLException e) {
-					System.out.println("DBアクセス時にエラーが発生しました。");
+				} catch (SQLException e){
+					System.out.println("DB切断時にエラーが発生しました。");
 					e.printStackTrace();
 				}
 			}
-			return result;
+
+			//途中でExceptionが発生した時はnullを返す。
+			return null;
 		}
 }
