@@ -168,7 +168,7 @@ public class PostDao {
 		}
 
 		//全件検索するSELECT文を実行するメソッドのサンプル
-		public static ArrayList<post> allPost(){
+		public static ArrayList<post> allPost(String id){
 			//アクセスに必要な変数の初期化
 			Connection con = null;
 			PreparedStatement pstmt = null;
@@ -186,11 +186,11 @@ public class PostDao {
 				con = DriverManager.getConnection(url, user, pw);
 
 				//SQL文の元を作成する
-				String sql = "SELECT * FROM post;";
+				String sql = "SELECT * FROM post where account_id = ?;";
 
 				//SQLを実行するための準備(構文解析)
 				pstmt = con.prepareStatement(sql);
-
+				pstmt.setString(1, id);
 				//SQLを実行し、DBから結果を受領する
 				rs = pstmt.executeQuery();
 
