@@ -29,8 +29,8 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav">
-				<li class="nav-item active"><a class="nav-link"
-					href="login.jsp">ログイン<span class="sr-only">(current)</span></a>
+				<li class="nav-item active"><a class="nav-link disabled"
+					href="/WebContent/WEB-INF/view/login.jsp">ログイン<span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item active"><a class="nav-link "
 					href="signup.jsp">登録</a></li>
