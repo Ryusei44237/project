@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,13 +22,15 @@ import dao.PostDao;
 public class MyPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 //	このservlet上で使用する変数
-	private static String id;
-
+public static ArrayList<post> list = new ArrayList<post>();
+	public static String id;
     public MyPageServlet() {
         super();
+
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		//メインjspからアカウントIDを取得し、アカウントIDをもとに行検索をかける。
 		id=request.getParameter("account_id");
 //		投稿内容表示処理 (アカウントIDを取得し、アカウントIDが一致する投稿を全件取得する）
@@ -42,6 +45,7 @@ public class MyPageServlet extends HttpServlet {
 		request.setAttribute("birthday",AccountDao.getbirthday);
 		request.setAttribute("tell",AccountDao.gettell);
 		request.setAttribute("update_at",AccountDao.getupdate_at);
+		request.setAttribute("list", list);
 
 		if (true) {
 			/*ここにmypage.jspへの遷移コードを書く｛mypage.jsp｝*/
@@ -63,8 +67,8 @@ public class MyPageServlet extends HttpServlet {
 		account result = AccountDao.searchDao2(id);
 	}
 	public static void post(String id) {
-		post result = PostDao.allpost(id);
-
+		//ArrayListを作ってListの中に全件検索のdaoのメソッドで得た値を代入する
+				list = PostDao.allPost();
 	}
 
 }
