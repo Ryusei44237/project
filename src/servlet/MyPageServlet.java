@@ -68,7 +68,7 @@ public static ArrayList<post> list = new ArrayList<post>();
 	}
 	public static void post(String id) {
 		//ArrayListを作ってListの中に全件検索のdaoのメソッドで得た値を代入する
-				list = PostDao.allPost();
+				list = PostDao.allPost(id);
 	}
 
 }
