@@ -201,7 +201,7 @@ public class PostDao {
 				tags = rs.getString("tag_id");
 				address = rs.getString("address");
 				create_at = rs.getString("create_at");
-				
+
 				while (rs.next()) {
 			        // 1件ずつCountryオブジェクトを生成して結果を詰める
 			        post list = new post();
