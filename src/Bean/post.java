@@ -1,5 +1,7 @@
 package Bean;
 
+import java.util.ArrayList;
+
 public class post {
 
 	private String id;
@@ -9,7 +11,7 @@ public class post {
 	private String account_id;
 	private String address;
 	private String create_at;
-
+	private ArrayList<post> result;
 
 
 
@@ -141,4 +143,8 @@ public class post {
 	}
 
 
+	public void add(ArrayList<post> result) {
+		// TODO 自動生成されたメソッド・スタブ
+		this.result=result;
+	}
 }
