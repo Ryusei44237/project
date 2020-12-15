@@ -1,6 +1,8 @@
 <%@page import="Bean.account"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page import="Bean.post" %>
 <!-- マイページ　html -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -345,8 +347,14 @@
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade show active" id="home" role="tabpanel"
 				aria-labelledby="home-tab">
+
 				<table class="table">
 					<tbody style="background-color:#f0f8ff;">
+				<%
+				ArrayList<post> list = (ArrayList<post>)request.getAttribute("list");
+				for(int i = 0 ; i < list.size() ; i++){
+					post post = list.get(i);
+				%>
 						<tr>
 							<th scope="row" style="width: 100px;">1</th>
 							<td><img src="../image/沖縄海.jpg" alt="ユーザのトップ画像"
@@ -368,10 +376,9 @@
 									class="fa fa-rss"></i>
 							</a></td>
 						</tr>
-						<tr>
-							<th scope="row">2</th>
-							<td></td>
-						</tr>
+						<%
+						}
+						%>
 					</tbody>
 				</table>
 			</div>
