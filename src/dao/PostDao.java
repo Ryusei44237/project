@@ -166,13 +166,14 @@ public class PostDao {
 			}
 			return result;
 		}
-//		検索要素（account_id）　全件検索
+
 		//全件検索するSELECT文を実行するメソッドのサンプル
 		public static ArrayList<post> allPost(String id){
 			//アクセスに必要な変数の初期化
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
+
 
 			try{
 				//JDBCドライバをロードする
@@ -196,6 +197,7 @@ public class PostDao {
 				//return用のArrayList生成
 				ArrayList<post> list = new ArrayList<post>();
 
+
 				//next()の戻り値がfalseになるまでResultSetから
 				//データを取得してArrayListに追加していく
 				while( rs.next() ){
@@ -207,6 +209,7 @@ public class PostDao {
 					create_at = rs.getString("create_at");
 					post result = new post(contents,img,tags,account_id,address,create_at);
 					list.add(result);
+
 				}
 				//中身の詰まったArrayListを返却する
 				System.out.println(list);
