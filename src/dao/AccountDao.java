@@ -18,7 +18,7 @@ public class AccountDao {
 	//ユーザ
 	private static final String user = "root";
 	//パスワード
-	private static final String pw = "Sql39sia";
+	private static final String pw = "44237";
 	public static String getname = null;
 	public static String getid=null;
 	public static String getmail=null;

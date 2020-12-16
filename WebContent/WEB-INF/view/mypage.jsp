@@ -276,8 +276,7 @@
 	<!-- hedear開始 -->
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="toppage.html"> <img
-				src="../image/空.jpg" width="30" height="30"
+			<a class="navbar-brand" href=""> <img src="${pageContext.request.contextPath}/app-image/気象庁.jpg" width="30" height="30"
 				class="d-inline-block align-top" alt=""> 卒研ページ
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -318,7 +317,7 @@
     header終了・ マイページ（ホーム）開始
   -->
 	<div class="home-page">
-		<img src="../image/沖縄海.jpg" alt="ユーザのトップ画像" class="rounded-circle"
+		<img src="{pageContext.request.contextPath}/app-image/気象庁.jpg" alt="ユーザのトップ画像" class="rounded-circle"
 			style="height: 100px; width: 100px;">
 
 		<!-- プロフィール -->
@@ -357,11 +356,12 @@
 				%>
 						<tr>
 							<th scope="row" style="width: 100px;">1</th>
-							<td><img src="../image/沖縄海.jpg" alt="ユーザのトップ画像"
+							<td><img src="../image/沖縄海.jpg" alt=""
 								class="rounded-circle"
-								style="margin-left: 0px; height: 30px; width: 30px;"><%=request.getAttribute("account") %>
-								<p class="text-justify">今日は初めまして</p> <!--twitter--> <a
-								class="btn-social-square btn-social-square--twitter"> <i
+								style="margin-left: 0px; height: 30px; width: 30px;"><%=post.getId() %>
+								<p class="text-justify"><%=post.getContents() %></p>
+								<p id="hidden"><%=post.getAddress() %><%=post.getImg()%><%=post.getTags_Id()%><%=post.getCreate_At() %></p>
+								 <!--twitter--> <a class="btn-social-square btn-social-square--twitter"> <i
 									class="fa fa-twitter"></i>
 							</a> <!--facebook--> <a
 								class="btn-social-square btn-social-square--facebook"> <i
@@ -374,6 +374,8 @@
 								class="btn-social-square btn-social-square--feedly"> <i
 									class="fa fa-rss"></i>
 							</a></td>
+
+
 						</tr>
 						<%
 						}
