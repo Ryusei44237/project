@@ -11,10 +11,6 @@ public class post {
 	private String account_id;
 	private String address;
 	private String create_at;
-	private ArrayList<post> result;
-
-
-
 	public post(String id, String contents, String img, String tags_id, String account_id, String address, String create_at ) {
 
 		this.id = id;
@@ -144,7 +140,5 @@ public class post {
 
 
 	public void add(ArrayList<post> result) {
-		// TODO 自動生成されたメソッド・スタブ
-		this.result=result;
 	}
 }

@@ -35,6 +35,7 @@ public static ArrayList<post> list = new ArrayList<post>();
 		id=request.getParameter("account_id");
 //		投稿内容表示処理 (アカウントIDを取得し、アカウントIDが一致する投稿を全件取得する）
 		post(id);
+		request.setAttribute("list", list);
 //		登録情報更新処理 （アカウントIDで照会し、一致するアカウント登録情報を取得）
 		account(id);
 		System.out.println("main.jspから　取得した名前　"+AccountDao.getname);
@@ -45,7 +46,7 @@ public static ArrayList<post> list = new ArrayList<post>();
 		request.setAttribute("birthday",AccountDao.getbirthday);
 		request.setAttribute("tell",AccountDao.gettell);
 		request.setAttribute("update_at",AccountDao.getupdate_at);
-		request.setAttribute("list", list);
+
 
 		if (true) {
 			/*ここにmypage.jspへの遷移コードを書く｛mypage.jsp｝*/

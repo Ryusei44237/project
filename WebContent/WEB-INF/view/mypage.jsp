@@ -359,8 +359,7 @@
 							<th scope="row" style="width: 100px;">1</th>
 							<td><img src="../image/沖縄海.jpg" alt="ユーザのトップ画像"
 								class="rounded-circle"
-								style="margin-left: 0px; height: 30px; width: 30px;"> user
-								name @acount id
+								style="margin-left: 0px; height: 30px; width: 30px;"><%=request.getAttribute("account") %>
 								<p class="text-justify">今日は初めまして</p> <!--twitter--> <a
 								class="btn-social-square btn-social-square--twitter"> <i
 									class="fa fa-twitter"></i>

@@ -20,7 +20,7 @@ public class PostDao {
 		//パスワード
 		private static final String pw = "44237";
 
-
+		public static String account_id;
 		public static String contents;
 		public static String img;
 		public static String tags;
@@ -199,12 +199,13 @@ public class PostDao {
 				//next()の戻り値がfalseになるまでResultSetから
 				//データを取得してArrayListに追加していく
 				while( rs.next() ){
+					account_id = rs.getString("account_id");
 					contents = rs.getString("contents");
 					img = rs.getString("img");
 					tags = rs.getString("tags_id");
 					address = rs.getString("address");
 					create_at = rs.getString("create_at");
-					post result = new post(contents,img,tags,address,create_at);
+					post result = new post(contents,img,tags,account_id,address,create_at);
 					list.add(result);
 				}
 				//中身の詰まったArrayListを返却する
