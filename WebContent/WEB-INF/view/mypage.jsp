@@ -275,7 +275,7 @@
 <body>
 	<!-- hedear開始 -->
 	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#f5f5f5!important;">
 			<a class="navbar-brand" href=""> <img src="${pageContext.request.contextPath}/app-image/気象庁.jpg" width="30" height="30"
 				class="d-inline-block align-top" alt=""> 卒研ページ
 			</a>
