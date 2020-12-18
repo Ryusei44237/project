@@ -274,45 +274,45 @@
 <!-- ヘッド終了　以下body -->
 <body>
 	<!-- hedear開始 -->
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color:#f5f5f5!important;">
-			<a class="navbar-brand" href=""> <img src="${pageContext.request.contextPath}/app-image/気象庁.jpg" width="30" height="30"
-				class="d-inline-block align-top" alt=""> 卒研ページ
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarNav" aria-controls="navbarNav"
-				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="login.html">ログイン<span class="sr-only">(current)</span></a></li>
-					<li class="nav-item active"><a class="nav-link "
-						href="sign-up.html">登録</a></li>
-					<li class="nav-item active"><a class="nav-link "
-						href="mypage.html">マイページ</a></li>
-				</ul>
-				<!--素材-->
-				<div class="searchform">
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search"
-							placeholder="キーワード入力" aria-label="Search">
-						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">検索</button>
-					</form>
-				</div>
-				<div class="postbutton">
-					<button type="button" class="btn btn-primary" data-toggle="modal"
-						data-target="#exampleModal">投稿ボタン</button>
-				</div>
-				<!-- Small modal -->
-				<button type="button" class="btn btn-primary" data-toggle="modal"
-					data-target=".bd-example-modal-sm">
-					<i class="fas fa-cog"></i>
-				</button>
-			</div>
-		</nav>
-	</header>
+	<section class="header">
+        <div class="header_items">
+            <!-- ロゴ -->
+            <div id="h_item1">
+                <div id="logo">
+                    <img src="https://getbootstrap.jp/docs/4.5/assets/brand/bootstrap-solid.svg" alt="">
+                </div>
+            </div>
+            <!-- 画面遷移 -->
+            <div id="h_item2">
+                <div id="form_group">
+                    <form action="/sotuken-project/tourokuServlet" method="get"><button type="submit" class="clear-decoration">登録</button></form>
+                    <form action="/sotuken-project/TestServlet" method="get"><button type="submit" class="clear-decoration">ログイン</button></form>
+                    <form action="/sotuken-project/MyPageServlet" method="get"><input type="hidden" name="account_id" value=<%=request.getAttribute("accountid")%>><button type="submit" class="clear-decoration" name="name" value=<%=request.getAttribute("getname") %>>マイページ</button></form>
+                </div>
+            </div>
+            <!-- タイトル -->
+            <div id="h_item3">
+                <div id="title">
+                    <p id="title-text">災害情報共有</p>
+                </div>
+            </div>
+            <!-- 検索バー -->
+            <div id="h_item4">
+                <div id="searchform">
+                    <form class="form-inline my-2 my-lg-0" style="width: 20vw; display: flex;" action="/sotuken-project/PostSearch"method="get">
+                        <input class="form-control mr-sm-2" type="text" name="Search"placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+                 <!-- 投稿ボタン -->
+                 <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary" id="post_button">投稿</button>
+                <!-- 設定ボタン -->
+                <div id="setting">
+                    <button type="button" class="btn btn-primary" data-toggle="modal"data-target=".bd-example-modal-sm"><i class="fas fa-cog"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
 	<!--
     header終了・ マイページ（ホーム）開始
   -->
