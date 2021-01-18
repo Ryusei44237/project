@@ -6,7 +6,7 @@
   padding: 0;
   background: #ffffff;
   overflow: hidden;
-  max-width: 400px;
+  max-width: 1100px;
   margin: 20px auto;
   font-size: 80%;
   border: solid 1px #eeeeee;
@@ -45,7 +45,7 @@
 }
 
 .twitter__container .twitter__contents.scroll {
-  height: 500px;
+  height: 86vh;
   overflow-y: scroll;
 }
 

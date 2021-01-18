@@ -52,113 +52,104 @@
 
   <!-- ▼▼twitter風ここから -->
   <div class="twitter__container">
-    <!-- タイトル -->
-    <div class="twitter__title">
-      <span class="twitter-logo"></span>
-    </div>
-
     <!-- ▼タイムラインエリア scrollを外すと高さ固定解除 -->
     <div class="twitter__contents scroll">
     <!-- ここに吹き出しやスタンプのタグを追加していく -->
+    <!-- 記事エリア -->
+      <div class="twitter__block">
+        <figure>
+          <img src="icon.png" />
+        </figure>
+        <div class="twitter__block-text">
+          <div class="name">うさきち<span class="name_reply">@usa_tan</span></div>
+          <div class="date">10分前</div>
+          <div class="text">
+            今日も終電だよ～<br>
+          </div>
+        </div>
+      </div>
+
+      <!-- 記事エリア -->
+      <div class="twitter__block">
+        <figure>
+          <img src="icon.png" />
+        </figure>
+        <div class="twitter__block-text">
+          <div class="name">あ<span class="name_reply">@abcde</span></div>
+          <div class="date">1時間前</div>
+          <div class="text">
+            残業でお腹空いたから朝までやってるお店でラーメン食べることにした(^o^)神の食べ物すぎる・・うまぁ
+            <div class="in-pict">
+              <img src="sample.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 記事エリア -->
+      <div class="twitter__block">
+        <figure>
+          <img src="icon.png" />
+        </figure>
+        <div class="twitter__block-text">
+          <div class="name">うさきち<span class="name_reply">@usa_tan</span></div>
+          <div class="date">2018/06/24 5:34</div>
+          <div class="text">
+            睡眠２時間で出社なんだけど…
+            <a href="https://nakox.jp/">https://nakox.jp/</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="twitter__block">
+        <figure>
+          <img src="icon.png" />
+        </figure>
+        <div class="twitter__block-text">
+          <div class="name">うさきち<span class="name_reply">@usa_tan</span></div>
+          <div class="date">10分前</div>
+          <div class="text">
+            今日も終電だよ～<br>
+          </div>
+        </div>
+      </div>
+
+      <!-- 記事エリア -->
+      <div class="twitter__block">
+        <figure>
+          <img src="icon.png" />
+        </figure>
+        <div class="twitter__block-text">
+          <div class="name">あ<span class="name_reply">@abcde</span></div>
+          <div class="date">1時間前</div>
+          <div class="text">
+            残業でお腹空いたから朝までやってるお店でラーメン食べることにした(^o^)神の食べ物すぎる・・うまぁ
+            <div class="in-pict">
+              <img src="sample.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 記事エリア -->
+      <div class="twitter__block">
+        <figure>
+          <img src="icon.png" />
+        </figure>
+        <div class="twitter__block-text">
+          <div class="name">うさきち<span class="name_reply">@usa_tan</span></div>
+          <div class="date">2018/06/24 5:34</div>
+          <div class="text">
+            睡眠２時間で出社なんだけど…
+            <a href="https://nakox.jp/">https://nakox.jp/</a>
+          </div>
+        </div>
+      </div>
+
     </div>
     <!--　▲タイムラインエリア ここまで -->
   </div>
   <!--　▲twitter風ここまで -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<div class="container">
-			<header class="clearfix">
-				<span>Disaster Information</span>
-				<h1>災害情報</h1>
-				<nav>
-					<a href="" class="icon-arrow-left" data-info="previous Blueprint">Previous Blueprint</a>
-					<a href="" class="icon-drop" data-info="back to the Codrops article">back to the Codrops article</a>
-				</nav>
-			</header>
-			<div class="main">
-				<ul class="cbp_tmtimeline">
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span> <span>18:30</span></time>
-						<div class="cbp_tmicon cbp_tmicon-phone"></div>
-						<div class="cbp_tmlabel">
-							<h2>津波来た</h2>
-							<p>わたしのおうちがああああああああああああああああ</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-11T12:04"><span>4/11/13</span> <span>12:04</span></time>
-						<div class="cbp_tmicon cbp_tmicon-screen"></div>
-						<div class="cbp_tmlabel">
-							<h2>無事です</h2>
-							<p>気仙沼小学校の避難所にいます。</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-13 05:36"><span>4/13/13</span> <span>05:36</span></time>
-						<div class="cbp_tmicon cbp_tmicon-mail"></div>
-						<div class="cbp_tmlabel">
-							<h2>帰宅困難者の方々へ</h2>
-							<p>東京大学では帰宅困難者のために一時体育館を開放しています。水や食料もあるそうです。</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-15 13:15"><span>4/15/13</span> <span>13:15</span></time>
-						<div class="cbp_tmicon cbp_tmicon-phone"></div>
-						<div class="cbp_tmlabel">
-							<h2>地震</h2>
-							<p>地震はマグニチュード8，0だそうです。みなさん津波の危険性を考えて高台に避難しましょう！</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-16 21:30"><span>4/16/13</span> <span>21:30</span></time>
-						<div class="cbp_tmicon cbp_tmicon-earth"></div>
-						<div class="cbp_tmlabel">
-							<h2>蔵人屋</h2>
-							<p>避難所暮らしが続くと蔵人屋のラーメンが食べたくなる。。。もちろん全部マックス</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-17 12:11"><span>4/17/13</span> <span>12:11</span></time>
-						<div class="cbp_tmicon cbp_tmicon-screen"></div>
-						<div class="cbp_tmlabel">
-							<h2></h2>
-							<p>#東日本大震災 より9年
-								#熊本地震 より4年
-								#スマスマ が終わってからも自然災害が沢山起きています今年はコロナも。すべての皆様が健康で日常を送れます様に…
-								#復興に向けて手を繋ごう
-								#SMAP の思いを継いで…
-								#日本財団 #日本赤十字社
-								#東日本大震災復興支援財団
-								https://news.1242.com/article/123091</p>
-						</div>
-					</li>
-					<li>
-						<time class="cbp_tmtime" datetime="2013-04-18 09:56"><span>4/18/13</span> <span>09:56</span></time>
-						<div class="cbp_tmicon cbp_tmicon-phone"></div>
-						<div class="cbp_tmlabel">
-							<h2>im tired</h2>
-							<p>俺たちの広瀬すずが。。。。。</p>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
 	</body>
 </html>
