@@ -83,7 +83,6 @@
 
 
 
-
 		<div class="container">
 			<header class="clearfix">
 				<span>Disaster Information</span>
