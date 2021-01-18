@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.FollowDao;
+
 /**
  * Servlet implementation class FollowServlet
  */
@@ -39,18 +41,23 @@ public class FollowServlet extends HttpServlet {
 
 
 		 // ログインユーザの取得
-         loginUser = getLoginUser(request);
+         //loginUser = getLoginUser(request);
+
 
         // リクエストパラメータの取得
         request.setCharacterEncoding("UTF-8");
+
+        String Account_Id = request.getParameter("accountid");
+        int account_Id = Integer.parseInt(Account_Id);
+
         String sFollowId = request.getParameter("followId");
         int followId = Integer.parseInt(sFollowId);
 
 
 
         // フォロー処理 FOLLOWテーブルに追加
-        //FollowLogic logic = new FollowLogic();
-        //logic.execute(loginUser.getUserId(), followId);
+        FollowDao a = new FollowDao();
+        a.Follow(account_Id, followId);
 
         // フォロー完了画面にフォワード
         //forward("WEB-INF/jsp/followConfirm.jsp", request, response);
