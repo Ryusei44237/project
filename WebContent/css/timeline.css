@@ -1,130 +1,156 @@
-
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-
-@font-face {
-	font-family: 'fontawesome';
-	src:url('../fonts/fontawesome.eot');
-	src:url('../fonts/fontawesome.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/fontawesome.svg#fontawesome') format('svg'),
-		url('../fonts/fontawesome.woff') format('woff'),
-		url('../fonts/fontawesome.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+@charset "UTF-8";
+/*/////////////////////////////////////////////////
+//twitter風チャット画面(会話方式)を記事に表示する方法
+/////////////////////////////////////////////////*/
+.twitter__container {
+  padding: 0;
+  background: #ffffff;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 20px auto;
+  font-size: 80%;
+  border: solid 1px #eeeeee;
 }
 
-*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-body, html { font-size: 100%; padding: 0; margin: 0;}
-
-/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
-.clearfix:before, .clearfix:after { content: " "; display: table; }
-.clearfix:after { clear: both; }
-
-body {
-    font-family: 'Lato', Calibri, Arial, sans-serif;
-    color: #47a3da;
+.twitter__container a {
+  color: #58aeed;
 }
 
-a {
-	color: #f0f0f0;
-	text-decoration: none;
+/* タイトル部分 */
+.twitter__container .twitter__title {
+  background: #58aeed;
+  padding: 10px;
+  text-align: center;
+  font-size: 150%;
+  color: #ffffff;
 }
 
-a:hover {
-	color: #000;
+.twitter__container .twitter__title .twitter-logo {
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url(svg/twitter-logo.svg) center no-repeat;
 }
 
-.main,
-.container > header {
-	width: 95%;
-	max-width: 69em;
-	margin: 0 auto;
-	padding: 0 1.875em 3.125em;
+.twitter__container .twitter__title span {
+  font-size: 20px;
 }
 
-.container > header {
-	padding: 2.875em 1.875em 1.875em;
+/* タイムライン部分 */
+.twitter__container .twitter__contents {
+  overflow: hidden;
+  position: relative;
+  line-height: 135%;
 }
 
-.container > header h1 {
-	font-size: 2.125em;
-	line-height: 1.3;
-	margin: 0;
-	float: left;
-	font-weight: 400;
+.twitter__container .twitter__contents.scroll {
+  height: 500px;
+  overflow-y: scroll;
 }
 
-.container > header span {
-	display: block;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 0.5em;
-	padding: 0 0 0.6em 0.1em;
+.twitter__container .twitter__block {
+  width: 100%;
+  display: block;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-bottom: solid 1px #eeeeee;
+  overflow: hidden;
 }
 
-.container > header nav {
-	float: right;
+.twitter__container .twitter__block:last-child {
+  border-bottom: solid 0px;
+}
+/* アイコン画像 */
+.twitter__container .twitter__block figure {
+  width: 50px;
+  padding: 0;
+  margin: 0;
+  float: left;
+  width: 50px;
+}
+  /* 正方形を用意 */
+.twitter__container .twitter__block figure img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+/* コメントエリア */
+.twitter__container .twitter__block-text {
+  margin: 0;
+  position: relative;
+  margin-left: 60px;
+  padding-right: 10px;
 }
 
-.container > header nav a {
-	display: block;
-	float: left;
-	position: relative;
-	width: 2.5em;
-	height: 2.5em;
-	background: #fff;
-	border-radius: 50%;
-	color: transparent;
-	margin: 0 0.1em;
-	border: 4px solid #47a3da;
-	text-indent: -8000px;
+.twitter__container .twitter__block-text .name {
+  font-weight: bold;
 }
 
-.container > header nav a:after {
-	content: attr(data-info);
-	color: #47a3da;
-	position: absolute;
-	width: 600%;
-	top: 120%;
-	text-align: right;
-	right: 0;
-	opacity: 0;
-	pointer-events: none;
+.twitter__container .twitter__block-text .name .name_reply {
+  color: #8a9aa4;
+  margin-left: 10px;
 }
 
-.container > header nav a:hover:after {
-	opacity: 1;
+.twitter__container .twitter__block-text .date {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  text-align: right;
+  color: #8a9aa4;
+}
+/* 本文 */
+.twitter__container .twitter__block-text .text {
+  margin: 5px 0;
+}
+/* 画像を貼る場合 */
+.twitter__container .twitter__block-text .text .in-pict img {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  margin: 5px 0;
+  width: 95%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.container > header nav a:hover {
-	background: #47a3da;
+/*///////////////////////////////////////////
+//埋め込みアイコン
+////////////////////////////////////////////*/
+
+.twitter__container .twitter__icon br{
+  display: none;
 }
 
-.icon-drop:before, 
-.icon-arrow-left:before {
-	font-family: 'fontawesome';
-	position: absolute;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 2;
-	text-align: center;
-	color: #47a3da;
-	-webkit-font-smoothing: antialiased;
-	text-indent: 8000px;
-	padding-left: 8px;
+.twitter__container .twitter__icon .twitter-bubble {
+  width: 14px;
+  height: 14px;
+  display: block;
+  padding-left: 20px;
+  background: url("svg/twitter-bubble.svg") left no-repeat;
+  width: 20%;
+  float: left;
+  color: #8a9aa4;
 }
 
-.container > header nav a:hover:before {
-	color: #fff;
+.twitter__container .twitter__icon .twitter-heart {
+  width: 14px;
+  height: 14px;
+  display: block;
+  padding-left: 20px;
+  background: url("svg/twitter-heart.svg") left no-repeat;
+  width: 20%;
+  float: left;
+  color: #8a9aa4;
 }
 
-.icon-drop:before {
-	content: "\e000";
-}
-
-.icon-arrow-left:before {
-	content: "\f060";
+.twitter__container .twitter__icon .twitter-loop {
+  width: 14px;
+  height: 14px;
+  display: block;
+  padding-left: 20px;
+  background: url("svg/twitter-loop.svg") left no-repeat;
+  width: 20%;
+  float: left;
+  color: #8a9aa4;
 }

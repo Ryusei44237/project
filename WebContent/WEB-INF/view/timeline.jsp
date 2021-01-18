@@ -49,6 +49,40 @@
 		<script src="/WebContent/js/timeline.js"></script>
 	</head>
 	<body>
+
+  <!-- ▼▼twitter風ここから -->
+  <div class="twitter__container">
+    <!-- タイトル -->
+    <div class="twitter__title">
+      <span class="twitter-logo"></span>
+    </div>
+
+    <!-- ▼タイムラインエリア scrollを外すと高さ固定解除 -->
+    <div class="twitter__contents scroll">
+    <!-- ここに吹き出しやスタンプのタグを追加していく -->
+    </div>
+    <!--　▲タイムラインエリア ここまで -->
+  </div>
+  <!--　▲twitter風ここまで -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<div class="container">
 			<header class="clearfix">
 				<span>Disaster Information</span>
