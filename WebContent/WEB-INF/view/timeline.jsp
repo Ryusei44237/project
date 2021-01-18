@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/timeline.css">
         <title>Registration</title>
 	</head>
-	
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="#">
@@ -29,7 +29,7 @@
           <a class="nav-link" href="/WebContent/WEB-INF/view/mypage.jsp">マイページ</a>
         </li>
         <li class="nav-item">
-        
+
       </ul>
     </div>
     </nav>

@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,11 +32,7 @@ public class PostSearch extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String SearchText=request.getParameter("Search");
-		System.out.println(SearchText);
-		post result = PostDao.searchPost(SearchText);
-		System.out.println(PostDao.contents+"検索結果");
-		
+
 	}
 
 	/**
@@ -43,7 +40,13 @@ public class PostSearch extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		String SearchText=request.getParameter("Search");
+		System.out.println(SearchText);
+		post result = PostDao.searchPost(SearchText);
+		System.out.println(PostDao.contents+"検索結果");
+		String view = "/WEB-INF/view/test.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+		dispatcher.forward(request, response);
 	}
 
 }
