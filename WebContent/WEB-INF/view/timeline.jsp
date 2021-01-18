@@ -49,7 +49,7 @@
 		<script src="/WebContent/js/timeline.js"></script>
 	</head>
 	<body>
-	
+
   <!-- ▼▼twitter風ここから -->
   <div class="twitter__container">
     <!-- タイトル -->
@@ -64,26 +64,27 @@
     <!--　▲タイムラインエリア ここまで -->
   </div>
   <!--　▲twitter風ここまで -->
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		<div class="container">
 			<header class="clearfix">
 				<span>Disaster Information</span>
