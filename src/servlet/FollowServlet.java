@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/FollowServlet")
 public class FollowServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -37,7 +37,7 @@ public class FollowServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		
+
 		 // ログインユーザの取得
         //User loginUser = getLoginUser(request);
 
@@ -45,8 +45,8 @@ public class FollowServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String sFollowId = request.getParameter("followId");
         int followId = Integer.parseInt(sFollowId);
-        
-        
+
+
 
         // フォロー処理 FOLLOWテーブルに追加
         //FollowLogic logic = new FollowLogic();
@@ -54,9 +54,9 @@ public class FollowServlet extends HttpServlet {
 
         // フォロー完了画面にフォワード
         //forward("WEB-INF/jsp/followConfirm.jsp", request, response);
-		
-		
-		
+
+
+
 	}
 
 }
