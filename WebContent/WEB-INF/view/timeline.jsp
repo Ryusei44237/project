@@ -1,3 +1,6 @@
+<%@page import="Bean.account"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page import="Bean.post" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,10 +12,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/timeline.css">
         <title>Registration</title>
-	</head>
 
 
-	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -263,14 +264,13 @@
 					</div>
 				</div>
 			</div>
-			<!--  -->
 		</div>
 	</div>
 </div>
-	</head>
-	<body>
+</head>
 
 
+<body>
 	<section class="header">
         <div class="header_items">
             <!-- ロゴ -->
@@ -303,10 +303,6 @@
                 </div>
                  <!-- 投稿ボタン -->
                  <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary" id="post_button">投稿</button>
-                <!-- 設定ボタン -->
-                <div id="setting">
-                    <button type="button" class="btn btn-primary" data-toggle="modal"data-target=".bd-example-modal-sm"><i class="fas fa-cog"></i></button>
-                </div>
             </div>
         </div>
     </section>
