@@ -270,7 +270,7 @@
 </head>
 
 
-<body>
+<body style="background:#f5f5f5;">
 	<section class="header">
         <div class="header_items">
             <!-- ロゴ -->
@@ -378,7 +378,7 @@
           <img src="icon.png" />
         </figure>
         <div class="twitter__block-text">
-          <div class="name">あ<span class="name_reply">@abcde</span></div>
+          <div class="name">ヨロズツバサ<span class="name_reply">@abcde</span></div>
           <div class="date">1時間前</div>
           <div class="text">
             残業でお腹空いたから朝までやってるお店でラーメン食べることにした(^o^)神の食べ物すぎる・・うまぁ
