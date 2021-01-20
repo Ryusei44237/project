@@ -1,6 +1,3 @@
-<%@page import="Bean.account"%>
-<%@page import="java.util.ArrayList"%>
-<%@ page import="Bean.post" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -270,7 +267,7 @@
 </head>
 
 
-<body style="background:#f5f5f5;">
+<body>
 	<section class="header">
         <div class="header_items">
             <!-- ロゴ -->
@@ -308,7 +305,7 @@
     </section>
 
 
-  <!-- ▼▼twitter風ここから -->
+ <!-- ▼▼twitter風ここから -->
   <div class="twitter__container">
     <!-- ▼タイムラインエリア scrollを外すと高さ固定解除 -->
     <div class="twitter__contents scroll">
