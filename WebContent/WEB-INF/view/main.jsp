@@ -20,7 +20,7 @@
 <script src="https://kit.fontawesome.com/86a6bb02b6.js"
 	crossorigin="anonymous"></script>
 <!-- end -->
-<title><%=request.getAttribute("getname")%>さんのトップページ</title>
+<title><%=request.getAttribute("getname")%> さんのトップページ</title>
 
 </head>
 
@@ -65,7 +65,7 @@
 
 
 	        						<div id="inputFileWrap">
-	            						 
+
 	            						<div id="btnInputFile"><span>ファイルを選択する</span></div>
 	           							<div id="btnChangeFile"><span>ファイルを変更する</span></div>
 	       							</div>

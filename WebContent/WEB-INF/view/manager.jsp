@@ -6,7 +6,7 @@
 <!-- 確認 -->
 <script>onLoad="setTimeout(5000)"</script>
 <meta charset="UTF-8">
-<title>アカウント管理</title>
+<title>アカウント管理 </title>
 </head>
 <body>
 <h1>insert</h1>

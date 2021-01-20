@@ -20,7 +20,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="nav-link disabled" href="/WebContent/WEB-INF/view/main.jsp"> <img
 			src="../image/空.jpg" width="30" height="30"
-			class="d-inline-block align-top" alt=""> 卒研ページ
+			class="d-inline-block align-top" alt="">  卒研ページ
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarNav" aria-controls="navbarNav"
