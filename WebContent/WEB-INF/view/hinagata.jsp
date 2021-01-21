@@ -32,7 +32,6 @@
                         <label for="exampleInputEmail1">投稿文</label>
                         <input type="text"class="form-control" id = "testname" name="PostContents" aria-describedby="emailHelp"placeholder="投稿文を入力">
                         <input type="hidden"name="accountid" value=<%=request.getAttribute("accountid")%>>
-                        <input type="file" name="uploadFile" id="uploadFile">
                     </class>
                             <div class="form-group col-md-4">
                                  <select id="inputState"
