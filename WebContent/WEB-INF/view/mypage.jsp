@@ -272,7 +272,7 @@
 
 </head>
 <!-- ヘッド終了　以下body -->
-<body>
+<body style="background:#fcfcfc;">
 	<!-- hedear開始 -->
 	<section class="header">
         <div class="header_items">
@@ -326,7 +326,7 @@
 				<h1>ユーザ名を入力</h1>
 			</div>
 			<div class="bg-white rounded">
-				<p class="text-justify">こんにちは！</p>
+				<p class="text-justify" style="background:#fcfcfc">こんにちは！</p>
 			</div>
 		</div>
 		<!-- end -->
@@ -385,7 +385,7 @@
 			</div>
 			<div class="tab-pane fade" id="profile" role="tabpanel"
 				aria-labelledby="profile-tab">
-				<div class="insta" style="background-color:#f0f8ff;">
+				<div class="insta" style="background-color:#fcfcfc;">
 					<div>
 						<a> <img src="../image/空.jpg" class="img-circle"> <span
 							class="fa-stack fa-lg"> <i
@@ -446,7 +446,7 @@
 				aria-labelledby="contact-tab">
 				<!--ここにその他-->
 <!-- アカウント情報変更タブ -->
-<form class="needs-validation" novalidate action="/sotuken-project/UpdateServlet" method="get" style="background-color:#f0f8ff;">
+<form class="needs-validation" novalidate action="/sotuken-project/UpdateServlet" method="get" style="background-color:#f5f5f5;">
 <div class="form-row">
 <div class="col-md-5 mb-3">
 <label for="validationCustom01">ユーザID</label>

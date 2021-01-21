@@ -95,7 +95,7 @@
     <div class="container_body">
 
         <section class="left_menu">
-            <p>left</p>
+
         </section>
 
         <!-- main area ここにカルーセル、card、その他 -->
@@ -104,7 +104,7 @@
             <div id="carousel-area">
                 <!-- カルーセルエリアを左、中央、右に三等分する -->
                 <div id="carousel_left_side">
-                    leftside
+
                 </div>
                 <div id="carousel_center_side">
                     <div id="carousel">
@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div id="carousel_right_side">
-                    rightside
+
                 </div>
             </div>
             <!-- card -->
@@ -200,7 +200,7 @@
         <!-- main area end -->
 
         <sction class="right_menu">
-            right_menu
+
         </sction>
     </div>
     </div>

@@ -20,7 +20,7 @@ body{
 	border-bottom:none;
   }
   .blue{
-  	background-color: #5ea5ff;
+  	background-color: #b5b5b5;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -28,12 +28,12 @@ body{
 	color: #ffffff;
  }
 .blue:hover {
-background-color :#007bff;
+background-color :#555555;
 color: #ffffff;
 }
   .nav-tabs .nav-link.active.blue {
     color: #ffffff;
-    background-color: #9eceff;
+    background-color: #757575;
     border-bottom: #e2e2e2;
     font-weight: bold;
 }
@@ -59,6 +59,7 @@ color: #ffffff;
 	display: -webkit-flex;
 	flex-wrap: wrap;
 	-webkit-flex-wrap: wrap;
+	background:#fcfcfc;
 }
 .insta > div {
 	position: relative;
